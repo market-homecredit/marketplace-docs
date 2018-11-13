@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Сервис товаров в рассрочку Homecredit: протокол взаимодействия с партнерами
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -18,12 +18,9 @@ search: true
 ---
 
 # Introduction
-
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Добро пожаловать на страницу интеграции с Маркетплейсом Хоум Кредит!
+ В документации детально описан процесс работы с клиентом от момента выбора товара и до момента взаиморасчета с партнером при осуществлении покупки товаров. 
+ На странице содержатся требования к выгружаемому каталогу товаров партнера и сервису API,который должен реализовать партнер при осуществлении интеграции с Маркетплейсом.
 
 # Authentication
 
