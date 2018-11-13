@@ -8,6 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
+
   - <a href='https://market.homecredit.ru'>Маркетлейс "Товары в рассрочку"</a>
 
 includes:
@@ -101,6 +102,7 @@ search: true
 Path: /order/check
 
 Входные параметры:`
+
 
 # Authentication
 
@@ -201,7 +203,8 @@ This endpoint retrieves all kittens.
 
 ### Query Parameters
 
-Параметр для формата XML | Тип | 
+
+Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
