@@ -3,9 +3,7 @@ title: Markeplace_HC
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
+
 
 toc_footers:
 
@@ -81,8 +79,16 @@ search: true
 ![](image_selfservice.jpeg)
 
 ##Описание параметров CSV с точками самовывоза
-
-
+| Параметр                    | Описание                                                                                                                                                                            |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Id`<br> string             | Идентификатор точки самовывоза.                                                                                                                                                     |
+| `TradingPoint`<br> integer  | Код торговой точки, соответствующий данному пункту самовывоза. Код кредитного продукта можно уточнить у менеджера, ответственного за работу с банком.                               |
+| `RegionCode`<br> integer    | Идентификатор региона. Значение берется из списка регионов, в которых работает маркетплейс. Список регионов будет предоставлен со стороны Marketplace.                              |
+| `RegionName`<br> string     | Название региона согласно списку. Значение берется из списка регионов, в которых работает маркетплейс. Список регионов будет предоставлен со стороны Marketplace.                   |
+| `Address`<br> string        | Адрес точки самовывоза (произвольное описание).                                                                                                                                     |
+| `workingDays`<br> string    | Режим работы в будние дни, формат XX:XX-XX:XX, например 11:00-20:00                                                                                                                 |
+| `Saturday`<br> string       | Режим работы в субботу, формат XX:XX-XX:XX, например 11:00-20:00. Если поле остается пустым, берется значение из workingDays, если указано false —в субботу пункт не работает.      |
+| `Sunday`<br>  string             | Режим работы в воскресенье, формат XX:XX-XX:XX, например 11:00-20:00. Если поле остается пустым, берется значение из Saturday, если указано false —в воскресенье пункт не работает. |
 #Процесс покупки товара
 
 ##Покупка товара с доставкой курьером
@@ -93,88 +99,19 @@ search: true
 ![](image_delivery_self.jpeg)
 
 ##Проверка наличия товара у партнера
-В момент когда Покупатель выбрал предложение, партнеру поступает запрос на проверку наличия данного товара в регионе. В ответ партнер должен уведомить о возможности зарезервировать товар, а также прислать условия доставки и самовывоза. Расчет параметров получения товара клиентом должен производиться на основе доступных товаров. (Например, если доступно только 3 из 5 переданных в запросе товаров, стоимость доставки должна быть только для этих трех товаров).
-
-
-
-`Method: POST
-
-Path: /order/check
-
-Входные параметры:`
-
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl -vk -X POST  https://example.com/order/check/  
+  -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' 
+  -d '{"offersRequest": [
+        {
+            "offerId" : 123,
+            "quantity" : 1,
+            "regionId" : 77,
+            "productCode" : "0-0-6"
+        }
+    ]}'
 ```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> Пример ответа в JSON:
 
 ```json
 [
@@ -194,14 +131,14 @@ let kittens = api.kittens.get();
   }
 ]
 ```
+В момент когда Покупатель выбрал предложение, партнеру поступает запрос на проверку наличия данного товара в регионе. В ответ партнер должен уведомить о возможности зарезервировать товар, а также прислать условия доставки и самовывоза. Расчет параметров получения товара клиентом должен производиться на основе доступных товаров. (Например, если доступно только 3 из 5 переданных в запросе товаров, стоимость доставки должна быть только для этих трех товаров).
 
-This endpoint retrieves all kittens.
 
-### HTTP Request
+### HTTP запрос
 
-`GET http://example.com/api/kittens`
+`POST /order/check`
 
-### Query Parameters
+### Body parameters
 
 
 Parameter | Default | Description
@@ -209,111 +146,8 @@ Parameter | Default | Description
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+  
+  
+ 
