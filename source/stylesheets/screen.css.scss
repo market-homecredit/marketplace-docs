@@ -163,6 +163,11 @@ html, body {
     color: $nav-active-parent-text;
   }
 
+
+    .toc-list-h1 {
+    margin-top: 20px;
+  }
+
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
