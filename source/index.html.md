@@ -235,16 +235,16 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 Данный сценарий предполагает, что в точке самовывоза партнера присутствует кредитный специалист, который имеет доступ в систему Банка и полностью сопровождает процесс подписания договора с Покупателем.
 ![](image_delivery_self.jpeg)
 
-#POST /order/check
+#POST /order/check/
 **Проверка наличия товара у партнера.**<br>
 В момент когда Покупатель выбрал предложение, партнеру поступает запрос на проверку наличия данного товара в регионе. В ответ партнер должен уведомить о возможности зарезервировать товар, а также прислать условия доставки и самовывоза. Расчет параметров получения товара клиентом должен производиться на основе доступных товаров. (Например, если доступно только 3 из 5 переданных в запросе товаров, стоимость доставки должна быть только для этих трех товаров).
 
 ## Входные параметры
-`POST https://example.com/order/check`
+`POST https://example.com/order/check/`
 > Пример запроса POST /order/check:
 
 ```shell
-curl -X POST https://example.com/order/check \
+curl -X POST https://example.com/order/check/ \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -d '{"offersRequest":[
@@ -367,6 +367,7 @@ curl -X POST https://example.com/order18022500002104/reserve \
     ], 
   "regionId": 77, 
   "pointId": "0",
+  "deliveryId": 7,
   "productCode": "0-0-3",
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
@@ -727,7 +728,7 @@ curl -X GET \
 В случае изменения товарной позиции, партнеру необходимо отправить запрос к Маркетплейсу на обновление информации о предложении.
 
 ## Входные параметры
-`POST https:/market.homecredit.ru/offers/
+`POST https:/market.homecredit.ru/offers/`
 
 
 > Пример запроса POST /offers/:
