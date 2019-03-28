@@ -241,7 +241,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 
 ## Входные параметры
 `POST https://example.com/order/check/`
-> Пример запроса POST /order/check:
+> Пример запроса POST /order/check/:
 
 ```shell
 curl -X POST https://example.com/order/check/ \
@@ -263,7 +263,7 @@ curl -X POST https://example.com/order/check/ \
 
 | Параметр                  | Обязательность | Описание                                                                                                             |
 |---------------------------|----------------|----------------------------------------------------------------------------------------------------------------------|
-| `offerId` <br> integer    | Обязательно    | Идентификатор товара из YML-каталога.                                                                                |
+| `offerId` <br> string    | Обязательно    | Идентификатор товара из YML-каталога.                                                                                |
 | `quantity`<br>integer     | Обязательно    | Количество единиц товара для бронирования.                                                                           |
 | `regionId` <br>integer    | Обязательно    | Идентификатор региона                                                                                                |
 | `productCode`<br> string | Обязательно    | Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul> |
@@ -367,7 +367,7 @@ curl -X POST https://example.com/order18022500002104/reserve \
     ], 
   "regionId": 77, 
   "pointId": "0",
-  "deliveryId": 7,
+  "DeliveryId": 7,
   "productCode": "0-0-3",
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
@@ -380,7 +380,7 @@ curl -X POST https://example.com/order18022500002104/reserve \
 | `offerIds`<br> Array of [{offer}](#offer-3)| Обязательно | Массив объектов с идентификаторами товаров и их количество. |
 | `regionId`<br> integer | Обязательно | Идентификатор региона из списка. |
 | `pointId`<br>string | Обязательно | Идентификатор точки самовывоза из CSV, 0 - если выбрана доставка курьером. |
-| `deliveryId`<br>integer  | Необязательно | Идентификатор службы доставки в системе партнера. |
+| `DeliveryId`<br>integer  | Необязательно | Идентификатор службы доставки в системе партнера. |
 | `productCode`<br>string  | Обязательно | Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul> |
 | `address`<br> [{address}](#address)| Необязательно | Адрес в формате КЛАДР, указывается, если выбрана доставка курьером. |
 | `client`<br> [{clientInfo}](#clientInfo)| Обязательно(для метода reserve) | Информация о клиенте. |
@@ -439,15 +439,33 @@ curl -X POST https://example.com/order18022500002104/reserve \
              
   
 `HTTP status code 200 OK — Товар зарезервирован(ответ на метод reserve).`
+> Пример ответа в JSON:
+
+```json
+{
+"orderId": "18022600000999",
+"status": "reserved",
+"PartnerOrderId": "12345"
+}
+```
 
 | Параметр | Обязательность | Описание |
 |-----------------------------|----------------|------------------------------------------------------------|
 | `orderId` <br>string | Обязательно | Идентификатор заказа, сгенерированный на стороне Маркетплейса. |
-| `status`<br> string | Обязательно | значение: "prereserved" |
+| `status`<br> string | Обязательно | значение: "reserved" |
 | `partnerOrderId` <br>string | Необязательно | Идентификатор заказа, сгенерированный на стороне партнера. |
 
 
 `HTTP status code 200 OK — Товар недоступен для резервирования.`
+> Пример ответа в JSON:
+
+```json
+{
+"orderId": "18022600000999",
+"status": "cancelled",
+"reason": "not in stock"
+}
+```
 
 | Параметр | Обязательность | Описание |
 |-----------------------------|----------------|------------------------------------------------------------------------------|
