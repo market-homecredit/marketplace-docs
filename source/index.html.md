@@ -383,7 +383,7 @@ curl -X POST https://example.com/order18022500002104/reserve \
 | `DeliveryId`<br>integer  | Необязательно | Идентификатор службы доставки в системе партнера. |
 | `productCode`<br>string  | Обязательно | Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul> |
 | `address`<br> [{address}](#address)| Необязательно | Адрес в формате КЛАДР, указывается, если выбрана доставка курьером. |
-| `client`<br> [{clientInfo}](#clientInfo)| Обязательно(для метода reserve) | Информация о клиенте. |
+| `client`<br> [{clientInfo}](#clientinfo)| Обязательно(для метода reserve) | Информация о клиенте. |
                            
 ### объект offer
 | Параметр | Обязательность | Описание |
