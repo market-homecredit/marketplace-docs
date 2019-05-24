@@ -1395,6 +1395,16 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </tr>
 </tbody></table>
 <h2 id='4e101f41fd-3'>Обработка ошибок</h2>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1414,17 +1424,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <td>Заказ не существует или указан неверный идентификатор.</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>Пример ответа в JSON:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
-    </span><span class="p">}</span><span class="w"> 
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='get-order-orderid'>GET /order/:orderId</h1>
+<h1 id='get-order-orderid'>GET /order/:orderId</h1>
 <p><strong>Проверка статуса заказа</strong></p>
 
 <blockquote>
