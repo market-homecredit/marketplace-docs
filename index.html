@@ -1973,37 +1973,138 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </tr>
 </tbody></table>
 
-<p><strong>Объект offer</strong>
-| Параметр | Обязательность | Описание |
-|------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <code>offerId</code><br> integer | Обязательно | Идентификатор товара из YML-каталога. |
-| <code>quantity</code><br> integer | Обязательно | Количество единиц товара. |
-| <code>price</code><br> float | Обязательно | Цена товара с учетом скидки, предоставляемой партнером. Размер скидки зависит от используемого кредитного продукта (срока рассрочки) и согласован с партнером. |
-| <code>priceTotal</code><br> float | Обязательно | Цена товара без учета скидки, то есть стоимость товара, которую партнер заявил в своем каталоге. |</p>
+<p><strong>Объект offer</strong></p>
 
-<p><strong>Объект address</strong>
-| Параметр | Обязательность | Описание |
-|-----------------------|----------------|----------------------|
-| <code>country</code><br>  string | Обязательно | Код страны по КЛАДР. |
-| <code>region</code><br> string | Обязательно | Регион. |
-| <code>district</code><br>string | Обязательно | Район. |
-| <code>town</code><br>string | Обязательно | Город. |
-| <code>locality</code><br>string | Обязательно | Населенный пункт. |
-| <code>street</code> <br>string | Обязательно | Улица. |
-| <code>house</code><br> string | Обязательно | Дом. |
-| <code>flat</code> <br>string | Необязательно | Квартира. |
-| <code>block</code> <br>string | Необязательно | Корпус. |
-| <code>building</code> <br>string | Необязательно | Строение. |
-| <code>zipcode</code> <br>string | Обязательно | Индекс. |</p>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code><br> integer</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>quantity</code><br> integer</td>
+<td>Обязательно</td>
+<td>Количество единиц товара.</td>
+</tr>
+<tr>
+<td><code>price</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара с учетом скидки, предоставляемой партнером. Размер скидки зависит от используемого кредитного продукта (срока рассрочки) и согласован с партнером.</td>
+</tr>
+<tr>
+<td><code>priceTotal</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара без учета скидки, то есть стоимость товара, которую партнер заявил в своем каталоге.</td>
+</tr>
+</tbody></table>
 
-<p><strong>Объект clientInfo</strong>
-| Параметр | Обязательность | Описание |
-|------------------------|----------------|---------------------------------------------------|
-| <code>firstName</code><br>string | Обязательно | Имя клиента. |
-| <code>lastName</code><br>string | Обязательно | Фамилия клиента. |
-| <code>middleName</code><br>string | Необязательно | Отчество клиента. |
-| <code>email</code><br>string | Необязательно | E-mail. |
-| <code>phone</code><br>string | Обязательно | Телефон клиента. Номер должен быть ровно 10 цифр. |</p>
+<p><strong>Объект address</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>country</code><br>  string</td>
+<td>Обязательно</td>
+<td>Код страны по КЛАДР.</td>
+</tr>
+<tr>
+<td><code>region</code><br> string</td>
+<td>Обязательно</td>
+<td>Регион.</td>
+</tr>
+<tr>
+<td><code>district</code><br>string</td>
+<td>Обязательно</td>
+<td>Район.</td>
+</tr>
+<tr>
+<td><code>town</code><br>string</td>
+<td>Обязательно</td>
+<td>Город.</td>
+</tr>
+<tr>
+<td><code>locality</code><br>string</td>
+<td>Обязательно</td>
+<td>Населенный пункт.</td>
+</tr>
+<tr>
+<td><code>street</code> <br>string</td>
+<td>Обязательно</td>
+<td>Улица.</td>
+</tr>
+<tr>
+<td><code>house</code><br> string</td>
+<td>Обязательно</td>
+<td>Дом.</td>
+</tr>
+<tr>
+<td><code>flat</code> <br>string</td>
+<td>Необязательно</td>
+<td>Квартира.</td>
+</tr>
+<tr>
+<td><code>block</code> <br>string</td>
+<td>Необязательно</td>
+<td>Корпус.</td>
+</tr>
+<tr>
+<td><code>building</code> <br>string</td>
+<td>Необязательно</td>
+<td>Строение.</td>
+</tr>
+<tr>
+<td><code>zipcode</code> <br>string</td>
+<td>Обязательно</td>
+<td>Индекс.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект clientInfo</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>firstName</code><br>string</td>
+<td>Обязательно</td>
+<td>Имя клиента.</td>
+</tr>
+<tr>
+<td><code>lastName</code><br>string</td>
+<td>Обязательно</td>
+<td>Фамилия клиента.</td>
+</tr>
+<tr>
+<td><code>middleName</code><br>string</td>
+<td>Необязательно</td>
+<td>Отчество клиента.</td>
+</tr>
+<tr>
+<td><code>email</code><br>string</td>
+<td>Необязательно</td>
+<td>E-mail.</td>
+</tr>
+<tr>
+<td><code>phone</code><br>string</td>
+<td>Обязательно</td>
+<td>Телефон клиента. Номер должен быть ровно 10 цифр.</td>
+</tr>
+</tbody></table>
 <h3 id='1300eba048-6'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Товар зарезервирован(ответ на метод reserve).</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
