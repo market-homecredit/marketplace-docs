@@ -58,7 +58,8 @@ search: false
         </categories>
         <offers>
             <offer id="42" available="true" credit="list">
-                <price>81999</price>
+                <price>109999</price>
+                <url>https://online-retail-company.com/shop/kompyuternaya-technika/noutbuki/42</url>
                 <credits>
                     <credit program="0-0-24"/>
                     <credit program="0-0-12"/>
@@ -79,11 +80,12 @@ search: false
                     <option cost="488" days="5"/>
                 </delivery-options>
                 <categoryId>8</categoryId>
-                <name>MacBook</name>
-                <description>12-inch (diagonal) LED-backlit display with IPS technology</description>
+                <name>MacBook Pro</name>
+                <description>16-inch (diagonal) LED-backlit display with IPS technology</description>
             </offer>
             <offer id="262" available="true">
                 <price>32499</price>
+                <url>https://online-retail-company.com/shop/mobilnaya-technika/tablets/262</url>
                 <pickup>true</pickup>
                 <delivery>false</delivery>
                 <points>
