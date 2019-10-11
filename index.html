@@ -227,9 +227,6 @@
                     <a href="#xml" class="toc-h2 toc-link" data-title="Каталог в формате XML">Каталог в формате XML</a>
                   </li>
                   <li>
-                    <a href="#lt-name-gt" class="toc-h2 toc-link" data-title="Требования для тега &lt;name&gt;">Требования для тега &lt;name&gt;</a>
-                  </li>
-                  <li>
                     <a href="#5f7c417405" class="toc-h2 toc-link" data-title="Процесс загрузки каталога">Процесс загрузки каталога</a>
                   </li>
               </ul>
@@ -478,10 +475,6 @@
 <td><code>credit</code><br> Обязательный, если предложение доступно в рассрочку</td>
 <td>Признак, что товар продается в рассрочку. Возможные значения:<ul><li>list — признак, что для данного товара существует ограниченный список программ рассрочек, которые будут описаны в параметре credits;</li><li>Отсутствие данного признака означает, что данный товар недоступен для продажи рассрочку.</li></ul></td>
 </tr>
-<tr>
-<td><code>code</code><br> Необязательный</td>
-<td>Код кредитного продукта. Служит для идентификации срока рассрочки; партнерской скидки по кредитному продукту; сегмента или конкретного бренда, на который распространяется кредитный продукт. Пример: code=&quot;00ОЛ41Б24&quot;. Код кредитного продукта можно уточнить у менеджера ответственного за работу с Банком.</td>
-</tr>
 </tbody></table>
 
 <aside class="warning">Каждый offerID должен принадлежать товару, которому он был присвоен изначально! Нельзя присваивать новым товарам offerID, который ранее был присвоен другому товару.</aside>
@@ -541,7 +534,7 @@
 <td>Произвольное описание товара. Не более 3000 символов.</td>
 </tr>
 </tbody></table>
-<h2 id='lt-name-gt'>Требования для тега &lt;name&gt;</h2>
+<h3 id='lt-name-gt'>Требования для тега &lt;name&gt;</h3>
 <aside class="notice">Тег &lt;name&gt; содержит в себе название товара, которое будет выведено в названии карточки товара на платформе Marketplace, и в соответствии с требованиями отдела контента, должно иметь определенную структуру.</aside>
 
 <p><strong>Обязательные составляющие тега &lt;name&gt;:</strong>
@@ -926,7 +919,6 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
   "regionId": 77, 
   "pointId": "0",
   "DeliveryId": 7,
-  "productCode": "0-0-3",
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
 }'</span>
@@ -962,11 +954,6 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <td><code>DeliveryId</code><br>integer</td>
 <td>Необязательно</td>
 <td>Идентификатор службы доставки в системе партнера.</td>
-</tr>
-<tr>
-<td><code>productCode</code><br>string</td>
-<td>Обязательно</td>
-<td>Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
 </tr>
 <tr>
 <td><code>address</code><br> <a href="#address">{address}</a></td>
@@ -1012,7 +999,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <tr>
 <td><code>productCode</code><br> string</td>
 <td>Обязательно</td>
-<td>Код кредитного продукта (срок рассрочки).</td>
+<td>Код кредитного продукта (срок рассрочки).<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
 </tr>
 </tbody></table>
 
