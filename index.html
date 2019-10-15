@@ -257,7 +257,7 @@
             <a href="#api" class="toc-h1 toc-link" data-title="Методы API">Методы API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post-order-check" class="toc-h2 toc-link" data-title="POST /order/check/">POST /order/check/</a>
+                    <a href="#post-order-check" class="toc-h2 toc-link" data-title="POST /order/check">POST /order/check</a>
                   </li>
                   <li>
                     <a href="#post-order-orderid-reserve" class="toc-h2 toc-link" data-title="POST /order/:orderId/reserve">POST /order/:orderId/reserve</a>
@@ -292,7 +292,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://market.homecredit.ru'>Маркетлейс Home Credit</a></li>
+            <li><a href='https://market.homecredit.ru'>Маркетплейс Home Credit</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -537,6 +537,8 @@
 <h3 id='lt-name-gt'>Требования для тега &lt;name&gt;</h3>
 <aside class="notice">Тег &lt;name&gt; содержит в себе название товара, которое будет выведено в названии карточки товара на платформе Marketplace, и в соответствии с требованиями отдела контента, должно иметь определенную структуру.</aside>
 
+<p><br></p>
+
 <p><strong>Обязательные составляющие тега &lt;name&gt;:</strong>
 <ul><li>тематику</li><li>модель</li><li>размеры</li><li>цвет</li><li>тонкости (На примере кровати: с механизмом, с матрасом, ящик для белья, и т.д.)</li><li>артикул</li></ul> </p>
 <h3 id='credit'>Атрибуты credit</h3>
@@ -660,11 +662,11 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </tbody></table>
 <h1 id='7d0433b90d'>Процесс покупки товара</h1><h2 id='e254debde2'>Покупка товара с доставкой курьером</h2>
 <p>Данный сценарий предполагает, что Покупатель подписывает договор без участия партнера, после чего инициируется процесс доставки.
-<img src="images/image_delivery_curier.jpeg" alt="Image delivery curier" /></p>
+<img src="images/image_delivery_curier.png" alt="Image delivery curier" /></p>
 <h2 id='c3b63905bf'>Покупка товара с последующим самовывозом</h2>
 <p>Данный сценарий предполагает, что в точке самовывоза партнера присутствует кредитный специалист, который имеет доступ в систему Банка и полностью сопровождает процесс подписания договора с Покупателем.
-<img src="images/image_delivery_self.jpeg" alt="Image delivery self" /></p>
-<h1 id='api'>Методы API</h1><h2 id='post-order-check'>POST /order/check/</h2>
+<img src="images/image_delivery_self.png" alt="Image delivery self" /></p>
+<h1 id='api'>Методы API</h1><h2 id='post-order-check'>POST /order/check</h2>
 <p><strong>Проверка наличия товара у партнера.</strong><br>
 Метод CHECK означает поступающий партнеру запрос на проверку наличия одного, или нескольких товаров в регионе и вызывается в двух случаях:
 <ul>
