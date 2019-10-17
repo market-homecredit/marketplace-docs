@@ -359,8 +359,12 @@
                     <span class="nt">&lt;option</span> <span class="na">cost=</span><span class="s">"488"</span> <span class="na">days=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/delivery-options&gt;</span>
                 <span class="nt">&lt;categoryId&gt;</span>8<span class="nt">&lt;/categoryId&gt;</span>
-                <span class="nt">&lt;name&gt;</span>MacBook Pro<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;description&gt;</span>16-inch (diagonal) LED-backlit display with IPS technology<span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;name&gt;</span>Ноутбук Apple MacBook Pro 15,4" with Touch Bar 2,6GHz/16Gb/512GbSSD/Radeon Pro 560X/MacOS Silver (MR972RU/A)<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;description&gt;</span>
+                  Процессоры высокой производительности, память большего объёма, передовая графика, 
+                  сверхбыстрые накопители и другие впечатляющие способности MacBook Pro помогут вам воплощать в 
+                  жизнь любые творческие проекты — ещё быстрее, чем раньше.
+                <span class="nt">&lt;/description&gt;</span>
             <span class="nt">&lt;/offer&gt;</span>
             <span class="nt">&lt;offer</span> <span class="na">id=</span><span class="s">"262"</span> <span class="na">available=</span><span class="s">"true"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;price&gt;</span>32499<span class="nt">&lt;/price&gt;</span>
@@ -378,8 +382,12 @@
                     <span class="nt">&lt;point</span> <span class="na">id=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/points&gt;</span>
                 <span class="nt">&lt;categoryId&gt;</span>2<span class="nt">&lt;/categoryId&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Galaxy Tab S<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;description&gt;</span>Элегантность контуров и современная функциональная мощь в сочетании с текстурой задней панели<span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;name&gt;</span>Планшет Apple iPad Pro 12.9 (2018) Wi-Fi 1Tb Space Gray (MTFR2RU/A)<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;description&gt;</span>
+                  Это iPad Pro с абсолютно новым дизайном и самыми продвинутыми технологиями Apple. 
+                  Он меняет все представления об iPad. Новый iPad Pro с дисплеем от края до края просто волшебен: 
+                  он справится со всеми вашими задачами, при этом его можно повернуть, как вам удобно.
+                <span class="nt">&lt;/description&gt;</span>
             <span class="nt">&lt;/offer&gt;</span>
         <span class="nt">&lt;/offers&gt;</span>
     <span class="nt">&lt;/shop&gt;</span>
@@ -540,7 +548,8 @@
 <p><br></p>
 
 <p><strong>Обязательные составляющие тега &lt;name&gt;:</strong>
-<ul><li>тематику</li><li>модель</li><li>размеры</li><li>цвет</li><li>тонкости (На примере кровати: с механизмом, с матрасом, ящик для белья, и т.д.)</li><li>артикул</li></ul> </p>
+<ul><li>название категории</li><li>вендор</li><li>модель</li><li>важная особенность (На примере кровати: с механизмом, с матрасом, ящик для белья, и т.д.)</li><li>цвет</li><li>артикул верндора (при наличии)</li></ul> 
+<img src="images/name_offers.jpg" alt="Name offers" /></p>
 <h3 id='credit'>Атрибуты credit</h3>
 <table><thead>
 <tr>
@@ -685,14 +694,18 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{"offersRequest":[
-{"offerId":"123",
-"quantity":1,
-"regionId":77,
-"productCode":"0-0-6"}
-{"offerId":"456",
-"quantity":1,
-"regionId":77,
-"productCode":"0-0-12"},
+  {
+    "offerId":"123",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-6"
+  },
+  {
+    "offerId":"456",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-12"
+  }
 ]}'</span>
 </code></pre>
 <table><thead>
