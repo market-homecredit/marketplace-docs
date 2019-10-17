@@ -80,8 +80,12 @@ search: false
                     <option cost="488" days="5"/>
                 </delivery-options>
                 <categoryId>8</categoryId>
-                <name>MacBook Pro</name>
-                <description>16-inch (diagonal) LED-backlit display with IPS technology</description>
+                <name>Ноутбук Apple MacBook Pro 15,4" with Touch Bar 2,6GHz/16Gb/512GbSSD/Radeon Pro 560X/MacOS Silver (MR972RU/A)</name>
+                <description>
+                  Процессоры высокой производительности, память большего объёма, передовая графика, 
+                  сверхбыстрые накопители и другие впечатляющие способности MacBook Pro помогут вам воплощать в 
+                  жизнь любые творческие проекты — ещё быстрее, чем раньше.
+                </description>
             </offer>
             <offer id="262" available="true">
                 <price>32499</price>
@@ -99,8 +103,12 @@ search: false
                     <point id="10"/>
                 </points>
                 <categoryId>2</categoryId>
-                <name>Galaxy Tab S</name>
-                <description>Элегантность контуров и современная функциональная мощь в сочетании с текстурой задней панели</description>
+                <name>Планшет Apple iPad Pro 12.9 (2018) Wi-Fi 1Tb Space Gray (MTFR2RU/A)</name>
+                <description>
+                  Это iPad Pro с абсолютно новым дизайном и самыми продвинутыми технологиями Apple. 
+                  Он меняет все представления об iPad. Новый iPad Pro с дисплеем от края до края просто волшебен: 
+                  он справится со всеми вашими задачами, при этом его можно повернуть, как вам удобно.
+                </description>
             </offer>
         </offers>
     </shop>
@@ -169,7 +177,8 @@ search: false
 <br>
 
 **Обязательные составляющие тега &lt;name&gt;:**
-<ul><li>тематику</li><li>модель</li><li>размеры</li><li>цвет</li><li>тонкости (На примере кровати: с механизмом, с матрасом, ящик для белья, и т.д.)</li><li>артикул</li></ul> 
+<ul><li>название категории</li><li>вендор</li><li>модель</li><li>важная особенность (На примере кровати: с механизмом, с матрасом, ящик для белья, и т.д.)</li><li>цвет</li><li>артикул верндора (при наличии)</li></ul> 
+![](name_offers.jpg)
 
 ###  Атрибуты credit
 | Атрибут| Описание |
@@ -279,14 +288,18 @@ curl -X POST https://example.com/order/check \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -d '{"offersRequest":[
-{"offerId":"123",
-"quantity":1,
-"regionId":77,
-"productCode":"0-0-6"}
-{"offerId":"456",
-"quantity":1,
-"regionId":77,
-"productCode":"0-0-12"},
+  {
+    "offerId":"123",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-6"
+  },
+  {
+    "offerId":"456",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-12"
+  }
 ]}'
 ```
 
