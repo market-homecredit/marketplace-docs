@@ -421,14 +421,14 @@ curl -X POST https://example.com/order/18022500002104/reserve \
   "orderId": "18022500002104", 
   "offerIds": [
     {
-      "offerId": "777"", 
+      "offerId": "777", 
       "quantity": 1, 
       "price": 4000.0,
       "priceTotal": 5000.0
       "productCode": "0-0-6"
     }
     {
-      "offerId": "456"", 
+      "offerId": "456", 
       "quantity": 1, 
       "price": 5000.0,
       "priceTotal": 6000.0,
