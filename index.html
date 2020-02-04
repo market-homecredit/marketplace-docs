@@ -226,9 +226,6 @@
                   <li>
                     <a href="#xml" class="toc-h2 toc-link" data-title="Каталог в формате XML">Каталог в формате XML</a>
                   </li>
-                  <li>
-                    <a href="#5f7c417405" class="toc-h2 toc-link" data-title="Процесс загрузки каталога">Процесс загрузки каталога</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -252,6 +249,9 @@
                     <a href="#c3b63905bf" class="toc-h2 toc-link" data-title="Покупка товара с последующим самовывозом">Покупка товара с последующим самовывозом</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#a1ce3c1a83" class="toc-h1 toc-link" data-title="Аутентификация">Аутентификация</a>
           </li>
           <li>
             <a href="#api" class="toc-h1 toc-link" data-title="Методы API">Методы API</a>
@@ -287,9 +287,6 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#b41a828c58" class="toc-h1 toc-link" data-title="История изменений">История изменений</a>
-          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://market.homecredit.ru'>Маркетплейс Home Credit</a></li>
@@ -301,9 +298,9 @@
         <h1 id='6d01e25d7c'>Общие положения</h1>
 <p><strong>Добро пожаловать на страницу интеграции с Маркетплейсом Хоум Кредит!</strong></p>
 
-<p>В документации детально описан процесс работы с клиентом от момента выбора товара и до момента взаиморасчета с партнером.</p>
+<p>На этой странице содержатся требования к выгружаемому каталогу товаров и сервису API, который необходимо реализовать партнеру при осуществлении интеграции с Маркетплейсом.</p>
 
-<p>На странице содержатся требования к выгружаемому каталогу товаров и сервису API,который необходимо реализовать партнеру при осуществлении интеграции с Маркетплейсом.</p>
+<p>Так же, здесь детально описан жизненный пусть заказа от момента выбора клиентом товара и до момента взаиморасчета с партнером.</p>
 
 <aside class="notice">
 Доступ в Личный кабинет партнера (далее ЛК) предоставляется по согласованию с менеджером, реквизиты доступа высылаются на заявленный адрес электронной почты (e-mail).
@@ -324,7 +321,7 @@
 <blockquote>
 <p>Пример выгрузки:</p>
 </blockquote>
-<pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="windows-1251"?&gt;</span>
+<pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;yml_catalog</span> <span class="na">date=</span><span class="s">"2018-01-29 12:56"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;shop&gt;</span>
         <span class="nt">&lt;name&gt;</span>Online Retail Company<span class="nt">&lt;/name&gt;</span>
@@ -393,9 +390,9 @@
     <span class="nt">&lt;/shop&gt;</span>
 <span class="nt">&lt;/yml_catalog&gt;</span>
 </code></pre>
-<p>Каталог обязательно должен иметь XML-заголовок, который начинается с первой строки, с нулевого элемента, в заголовке присутствуют атрибуты версии и используемая кодировка. Допустимые кодировки - UTF-8 или windows-1251. Пример заголовка:</p>
+<p>Каталог обязательно должен иметь XML-заголовок, который начинается с первой строки, с нулевого элемента, в заголовке присутствуют атрибуты версии и используемая кодировка. Допустимые кодировки – UTF-8 или windows-1251. Пример заголовка: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
 
-<p>За основу предложенной структуры XML-каталога использован формат выгрузки от <a href="https://yandex.ru/support/partnermarket/export/vendor-model.html">Яндекс.Маркет</a>, соответственно, если уже существует синхронизация с платформой Яндекс, достаточно внести незначительные дополнения, чтобы целевую выгрузку можно было задействовать для платформы Marketplace (минимально достаточно добавить атрибут credit в параметр offer, чтобы обозначить товары, которые планируется продавать в рассрочку).</p>
+<p>За основу предложенной структуры XML-каталога использован формат выгрузки от <a href="https://yandex.ru/support/partnermarket/export/vendor-model.html">Яндекс.Маркет</a>, соответственно, если уже существует синхронизация с платформой Яндекс, достаточно внести незначительные дополнения, чтобы целевую выгрузку можно было задействовать для платформы Marketplace.</p>
 
 <table><thead>
 <tr>
@@ -485,7 +482,7 @@
 </tr>
 </tbody></table>
 
-<aside class="warning">Каждый offerID должен принадлежать товару, которому он был присвоен изначально! Нельзя присваивать новым товарам offerID, который ранее был присвоен другому товару.</aside>
+<aside class="warning">Каждый offerID должен принадлежать товару, которому он был присвоен изначально! Нельзя присваивать новым товарам offerID, который ранее был присвоен другому товару, в противном случае оффер деактивируется. Это правило работает и в обратную сторону – если поменять у существующего оффера значение в теге **name**, этот оффер так же деактивируется!</aside>
 <h3 id='offer-2'>Элементы offer</h3>
 <table><thead>
 <tr>
@@ -591,10 +588,6 @@
 <p>Если товар есть не во всех точках самовывоза или существует техническое ограничение на перевозку товаров из одного пункта в другой, предусмотрен формат указания списка точек самовывоза для отдельно взятого товара, для этого необходимо использовать параметр points и перечислить в нем точки самовывоза:</p>
 
 <p>Список точек самовывоза партнер загружает через Личный кабинет, данный процесс описан в разделе <a href="#44b7115d87">Точки самовывоза</a></p>
-<h2 id='5f7c417405'>Процесс загрузки каталога</h2>
-<p>Подготовленный каталог необходимо указать в настройках аккаунта, которые задаются в Личном кабинете. Для каждого региона необходимо указать свой URL до целевого каталога. В случае, если партнер присутствует во всех регионах и имеет единый товарный каталог, необходимо выбрать “Все регионы” (необходимо предварительное согласование менеджера).</p>
-
-<p><img src="images/image_catalogue.jpeg" alt="Image catalogue" /></p>
 <h1 id='d914cac849'>Регионы покрытия</h1>
 <p>Название города в регионе покрытия означает и сам город, и область/район в котором он является административным центром.
 В файле прописаны:
@@ -612,7 +605,7 @@
 
 <p>Загрузка и актуализация списка происходит через Личный кабинет. Если для какого-то регионов не указаны точки самовывоза, Покупателю будет предложен вариант доставки курьером.</p>
 
-<p>При возможности разместить CSV на внешнем источнике, можно указать URL до целевого файла.
+<p>При возможности разместить CSV на внешнем источнике, можно указать URL до целевого файла.<br>
 <img src="images/image_selfservice.jpeg" alt="Image selfservice" /></p>
 <h2 id='csv'>Описание параметров CSV с точками самовывоза</h2>
 <blockquote>
@@ -676,6 +669,28 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <h2 id='c3b63905bf'>Покупка товара с последующим самовывозом</h2>
 <p>Данный сценарий предполагает, что в точке самовывоза партнера присутствует кредитный специалист, который имеет доступ в систему Банка и полностью сопровождает процесс подписания договора с Покупателем.
 <img src="images/image_delivery_self.png" alt="Image delivery self" /></p>
+
+<aside class="success">Презентация с описанием кредитного лимита и корзины.</aside>
+
+<p><a href="korzina_limit.pdf">Посмотреть</a></p>
+<h1 id='a1ce3c1a83'>Аутентификация</h1><pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/check <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'X-token: 1q2w3e4r5t6y'</span> <span class="se">\</span>
+  -d <span class="s1">'{"offersRequest":[
+  {
+    "offerId":"123",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-6"
+  }
+]}'</span>
+</code></pre>
+<p>Для обеспечения более высокого уровня защищенности, вы можете сгенерировать токен, который Маркетплейс будет использовать при выполнении запросов по API.</p>
+
+<p>Сгенерированный токен будет передаваться в хэдере <strong>X-token</strong>, как на примере.</p>
+
+<aside class="notice">Для установления шифрованного TLS соединения по протоколу HTTPS в Маркетплейс используется библиотека <a href="https://www.openssl.org">openssl 1.1.1</a>, из-за чего могут возникнуть проблемы при подключении с некоторыми устаревшими и небезопасными алгоритмами, напрмер SHA-1.</aside>
 <h1 id='api'>Методы API</h1><h2 id='post-order-check'>POST /order/check</h2>
 <p><strong>Проверка наличия товара у партнера.</strong><br>
 Метод CHECK означает поступающий партнеру запрос на проверку наличия одного, или нескольких товаров в регионе и вызывается в двух случаях:
@@ -772,7 +787,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
             </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"0"</span><span class="w">
             </span><span class="p">]</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456"</span><span class="p">,</span><span class="w">
@@ -786,7 +801,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
         </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"DeliveryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"DeliveryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доставка СДЭК(склад-склад)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"DeliveryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"Cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"Days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-2"</span><span class="w">
             </span><span class="p">}</span><span class="w">
@@ -867,13 +882,13 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </thead><tbody>
 <tr>
 <td><code>delivery</code><br> Array of Objects</td>
-<td>Необязательно</td>
-<td>Список вариантов доставки с указанием параметров: <ul><li>deliveryId (int) — идентификатор службы доставки в системе партнера (будет передано при резервировании заказа);</li> <li>deliveryName (string) — название службы доставки (будет отображено Покупателю);</li> <li>cost (int) — стоимость доставки (если параметр отсутствует, то стоимость необходимо уточнять у службы доставки);</li><li> days (string) — время доставки в днях (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
+<td>Обязательно, при наличии доставки</td>
+<td>Список вариантов доставки с указанием параметров: <ul><li><strong>deliveryId</strong> (int) — идентификатор службы доставки в системе партнера (будет передано при резервировании заказа);</li> <li><strong>deliveryName</strong> (string) — название службы доставки (будет отображено Покупателю);</li> <li><strong>cost</strong> (int) — стоимость доставки (если параметр отсутствует, то стоимость необходимо уточнять у службы доставки);</li><li><strong>days</strong> (string) — время доставки в днях (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
 </tr>
 <tr>
 <td><code>pickup</code><br> Array of Objects</td>
-<td>Необязательно</td>
-<td>Список точек самовывоза доступные для заказа с указанием параметров:<ul><li> point (int) — идентификатор точки самовывоза из CSV;</li> <li>cost (int) — стоимость за услугу самовывоза, можно указать 0 или не указывать данные параметр если самовывоз бесплатный;</li> <li>days (string) — время доставки товара на точку самовывоза, после которой товар можно забрать, 0 - если можно забрать в тот же день (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
+<td>Обязательно, при наличии самовывоза</td>
+<td>Список точек самовывоза доступные для заказа с указанием параметров:<ul><li> <strong>point</strong> (string) — идентификатор точки самовывоза из CSV;</li> <li><strong>cost</strong> (int) — стоимость за услугу самовывоза, можно указать 0 или не указывать данные параметр если самовывоз бесплатный;</li> <li><strong>days</strong> (string) — время доставки товара на точку самовывоза, после которой товар можно забрать, 0 - если можно забрать в тот же день (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
 </tr>
 </tbody></table>
 <h3 id='4e101f41fd'>Обработка ошибок</h3>
@@ -920,9 +935,9 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
       "offerId": "777", 
       "quantity": 1, 
       "price": 4000.0,
-      "priceTotal": 5000.0
+      "priceTotal": 5000.0,
       "productCode": "0-0-6"
-    }
+    },
     {
       "offerId": "456", 
       "quantity": 1, 
@@ -930,7 +945,6 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
       "priceTotal": 6000.0,
       "productCode": "0-0-12"
     }
-
     ], 
   "regionId": 77, 
   "pointId": "0",
@@ -962,12 +976,12 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <td>Идентификатор региона из списка.</td>
 </tr>
 <tr>
-<td><code>pointId</code><br>string</td>
+<td><code>pointId</code><br> string</td>
 <td>Обязательно</td>
 <td>Идентификатор точки самовывоза из CSV, 0 - если выбрана доставка курьером.</td>
 </tr>
 <tr>
-<td><code>DeliveryId</code><br>integer</td>
+<td><code>DeliveryId</code><br> integer</td>
 <td>Необязательно</td>
 <td>Идентификатор службы доставки в системе партнера.</td>
 </tr>
@@ -1021,6 +1035,8 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 
 <p><strong>Объект address</strong></p>
 
+<p>Столбец &quot;Обязательность&quot; в этой таблице указывает на элементы, которые могут содежаться в массиве адреса. В зависимости от введенного клиентом адреса, распознавание его и заполнение в теги может быть произвольным, просьба советоваться с сотрудниками интеграции при установке каких-либо проверок на обязательность тех или иных полей в этом массиве.</p>
+
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1040,17 +1056,17 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </tr>
 <tr>
 <td><code>district</code><br>string</td>
-<td>Обязательно</td>
+<td>Необязательно</td>
 <td>Район</td>
 </tr>
 <tr>
 <td><code>town</code><br>string</td>
-<td>Обязательно</td>
+<td>Необязательно</td>
 <td>Город</td>
 </tr>
 <tr>
 <td><code>locality</code><br>string</td>
-<td>Обязательно</td>
+<td>Необязательно</td>
 <td>Населенный пункт</td>
 </tr>
 <tr>
@@ -1329,7 +1345,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <p>Пример запроса POST /order/:orderId/status:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://example.com/order/1234567890/status/ <span class="se">\</span>
+  https://example.com/order/1234567890/status <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
@@ -2428,9 +2444,7 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 </code></pre>
 <p><code>GET https://example.com/order/:orderId</code></p>
 <h3 id='8c3e561fee-2'>Логика ответа</h3>
-<aside class="notice">
-Возможные сценарии:
-</aside>
+<p>Возможные сценарии:</p>
 
 <table><thead>
 <tr>
@@ -2625,24 +2639,9 @@ Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 <aside class="warning">
 В случае возникновения ошибки 5хх произойдет повторный запрос через 60 секунд, если ошибка повторится, партнеру перестанут поступать новые заказы. После пяти попыток с интервалом в минуту партнеру будет направлено email-уведомление о неполадках на его стороне, после чего партнер будет отключен от системы до тех пор, пока не сообщит о том, что работоспособность восстановлена.
 </aside>
-<h1 id='b41a828c58'>История изменений</h1>
-<aside class="notice">
-В данном разделе вы найдете информацию обо всех изменениях
-</aside>
 
-<table><thead>
-<tr>
-<th>Версия</th>
-<th>Дата изменения</th>
-<th>Описание</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>ver. 1.1</code></td>
-<td>24.05.2019</td>
-<td>Были добавлены методы API Маркетплейс (https://api.market.homecredit.ru)<br> POST /partner/offers/ и GET /credit_request/:orderId/status</td>
-</tr>
-</tbody></table>
+<p><br></p>
+<!-- На эту страницу можно дописать контент, который будет подставляться отдельным разделом внизу страницы. Раньше здесь был раздел "История изменений", но ныне он упразднен -->
 
       </div>
       <div class="dark-box">
