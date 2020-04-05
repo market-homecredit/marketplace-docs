@@ -262,9 +262,6 @@
                   <li>
                     <a href="#2-1" class="toc-h2 toc-link" data-title="2.1 – Поддержка клиентского кредитного лимита и полный функционал корзины">2.1 – Поддержка клиентского кредитного лимита и полный функционал корзины</a>
                   </li>
-                  <li>
-                    <a href="#2-2" class="toc-h2 toc-link" data-title="2.2 – Полный переход на новый функционал">2.2 – Полный переход на новый функционал</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -749,20 +746,12 @@
 </ul>
 
 <p>С переходом на эту фазу для партнера будет доступен новый процесс обработки заказов. Подробнее о нововведениях можно посмотреть в <a href="korzina_limit.pdf">этой презентации</a>.
-<aside class="warning">Так как раскатка нового функционала будет происходить асинхронно на разных платформах, для которых доступен Маркетплейс, на стороне партнера в этой фазе должны поддерживаться и старый и новый процесс обработки заказов. </p>
+<aside class="warning">На стороне партнера в этой версии должна быть поддержка как нового, так и старого процесса оформления заказа, т.к. по старому процессу будет происходить оплата заказов с офомлением кредитного договора в стороннем банке.</p>
 
 <ul>
 <li>Старый процесс – подписание клиентом кредитного договора (передается статус подписания договора <strong>SIGNED</strong>). </li>
 <li>Новый процесс – покупка с использованием кредитного лимита (передается статус оплаты заказа <strong>PAID</strong>).
 </aside></li>
-</ul>
-<h2 id='2-2'>2.2 – Полный переход на новый функционал</h2>
-<p>Завершающая фаза перехода на новый функционал и процесс оформление заказа клиентом. Прекращение поддержки старого клиентского процесса (с оформлением кредитного договора на каждый заказ).
-Изменения этой версии:
-<aside class="notice">TBA</aside></p>
-
-<ul>
-<li>Убран параметр productCode из метода <strong>POST /order/:orderId/reserve</strong>. </li>
 </ul>
 <h1 id='api-2-1'>Методы API (версии 2.1)</h1><h2 id='post-order-check'>→ POST /order/check</h2>
 <p><strong>Проверка наличия товара у партнера.</strong><br>
@@ -991,7 +980,7 @@
 </tbody></table>
 <h2 id='post-order-orderid-reserve'>→ POST /order/:orderId/reserve</h2>
 <p><strong>Резервирование товара у партнера</strong><br>
-После того, как покупатель заполнил заявку, выбрал способ доставки и его заявка была одобрена системой скоринга банка, партнеру приходит запрос на резервирование товара до момента подписания кредитного договора клиентом.
+После того, как покупатель выбрал нужные ему товары и способ доставки, при продолжении оформления заказа и переходу к выбору способов оплаты, партнеру приходит запрос на резервирование товара до момента оплаты заказа клиентом.
 В заказе может быть любое число товаров, которые будут переданы в массивах запросов, описанных ниже, поэтому для примера используется случай, когда в массиве передано два товара.</p>
 <h3 id='c35d6d472e-2'>Входные параметры</h3>
 <p><code>POST https://example.com/order/:orderId/reserve</code></p>
@@ -1214,7 +1203,7 @@
 <p><code>HTTP status code 200 OK — Оба товара зарезервированы.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -1240,7 +1229,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера</td>
 </tr>
@@ -1259,7 +1248,7 @@
 <p><code>HTTP status code 200 OK — Один из товаров недоступен для резервирования.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -1287,7 +1276,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера</td>
 </tr>
@@ -1389,7 +1378,7 @@
 <h2 id='post-order-orderid-status'>→ POST /order/:orderId/status</h2>
 <p><strong>Передача статуса заказа партнеру</strong></p>
 
-<p>Данным методом Маркетплейс передает партнеру статус заказа в случае его оплаты, подписания кредитной заявки, либо его отмены. Передача статуса оплаты, либо подписания кредитной заявки (этот процесс работает до момента перехода Маркетплейс на использование кредитных лимитов) служит для партнера сигналом для доставки заказа клиенту или на пункт самовывоза.</p>
+<p>Данным методом Маркетплейс передает партнеру статус заказа в случае его оплаты, подписания кредитной заявки, либо его отмены. Передача статуса оплаты, либо подписания кредитной заявки (после перехода Маркетплейс на процесс использования кредитных лимитов, этот статус нужен для поддержки работы Мультибанка) служит для партнера сигналом для доставки заказа клиенту или на пункт самовывоза.</p>
 
 <p><strong>Возможные сценарии:</strong></p>
 
@@ -1406,7 +1395,7 @@
 <td>Партнер может выдать товар на пункте самовывоза, либо начинает процесс доставки.</td>
 </tr>
 <tr>
-<td><code>SIGNED</code><br>Кредитный договор подписан<br>(До перехода на процесс кредитных лимитов)</td>
+<td><code>SIGNED</code><br>Кредитный договор подписан<br>(После перехода на процесс с кредитными лимитами, необходим для поддержки работы Мультибанка.)</td>
 <td>Покупатель подписал кредитный договор и ожидает получение товара.</td>
 <td>Партнер может выдать товар на пункте самовывоза, либо начинает процесс доставки.</td>
 </tr>
@@ -1429,7 +1418,7 @@
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "orderId": "18022600000999",
-    "partnerOrderID": "17814",
+    "partnerOrderId": "17814",
     "status": "PAID",
     "transactions": [
         {
@@ -1460,7 +1449,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейс</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br>string</td>
+<td><code>partnerOrderId</code><br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера</td>
 </tr>
@@ -1511,7 +1500,7 @@
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "orderId":"18022600000999",
-    "partnerOrderID":"777",
+    "partnerOrderId":"777",
     "status":"SIGNED"
   }'</span>
 </code></pre>
@@ -1528,7 +1517,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br>string</td>
+<td><code>partnerOrderId</code><br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -1546,7 +1535,7 @@
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -1564,7 +1553,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -1578,7 +1567,7 @@
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1595,7 +1584,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -1609,7 +1598,7 @@
 <p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"address is not in delivery area"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1627,7 +1616,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -1689,7 +1678,7 @@
 
 <ul>
 <li>legal_entity_secret: bytes - ключ юр.лица</li>
-<li>partner_order_id: str - id заказа на стороне партнера (partnerOrderID)</li>
+<li>partner_order_id: str - id заказа на стороне партнера (partnerOrderId)</li>
 <li>transaction_id: str - id транзакции (transactionId)</li>
 </ul>
 
@@ -2090,27 +2079,27 @@
          </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000995"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12341"</span><span class="w">
+         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12341"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000996"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12343"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12343"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"trackId"</span><span class="p">:</span><span class="s2">"TK456789"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000997"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12342"</span><span class="w">
+         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12342"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000998"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"12344"</span><span class="w">
+         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12344"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
@@ -2158,7 +2147,7 @@
 <td>Результат поиска номера заказа на стороне партнера. Может принимать значения <strong>&quot;ok&quot;</strong>, или <strong>&quot;not found&quot;</strong>. НЕ ОКОНЧАТЕЛЬНЫЙ ВАРИАНТ, ЗНАЧЕНИЯ МОГУТ БЫТЬ ИЗМЕНЕНЫ.</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер присвоил свой номер заказа на этапе резервирования.</td>
 </tr>
@@ -2650,7 +2639,7 @@
 <p><code>HTTP status code 200 OK — Оба товара зарезервированы.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -2676,7 +2665,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера</td>
 </tr>
@@ -2695,7 +2684,7 @@
 <p><code>HTTP status code 200 OK — Один из товаров недоступен для резервирования.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
          </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -2723,7 +2712,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Обязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера</td>
 </tr>
@@ -2861,7 +2850,7 @@
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "orderId":"1234567890",
-    "partnerOrderID":"777",
+    "partnerOrderId":"777",
     "status":"SIGNED"
   }'</span>
 </code></pre>
@@ -2878,7 +2867,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br>string</td>
+<td><code>partnerOrderId</code><br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования.</td>
 </tr>
@@ -2896,7 +2885,7 @@
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -2914,7 +2903,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -2928,7 +2917,7 @@
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -2946,7 +2935,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -2960,7 +2949,7 @@
 <p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address is not in delivery area"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2978,7 +2967,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3075,7 +3064,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -3096,7 +3085,7 @@
 <td>Значение: &#39;reserved&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -3106,7 +3095,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -3128,7 +3117,7 @@
 <td>Значение: &#39;delivering&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -3143,7 +3132,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -3164,7 +3153,7 @@
 <td>Значение: &#39;delivered&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -3175,7 +3164,7 @@
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -3196,7 +3185,7 @@
 <td>Значение: &#39;cancelled&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -3643,7 +3632,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
 </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -3664,7 +3653,7 @@
 <td>значение: &quot;reserved&quot;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3700,7 +3689,7 @@
 <td>Причина отказа в резервировании (Пример: &#39;address is not in delivery area&#39;).</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3776,7 +3765,7 @@
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "orderId":"1234567890",
-    "partnerOrderID":"777",
+    "partnerOrderId":"777",
     "status":"SIGNED"
   }'</span>
 </code></pre>
@@ -3793,7 +3782,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br>string</td>
+<td><code>partnerOrderId</code><br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования.</td>
 </tr>
@@ -3811,7 +3800,7 @@
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -3829,7 +3818,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3843,7 +3832,7 @@
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -3861,7 +3850,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3875,7 +3864,7 @@
 <p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address is not in delivery area"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3893,7 +3882,7 @@
 <td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code> <br>string</td>
+<td><code>partnerOrderId</code> <br>string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
 </tr>
@@ -3990,7 +3979,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -4011,7 +4000,7 @@
 <td>Значение: &#39;reserved&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -4021,7 +4010,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -4043,7 +4032,7 @@
 <td>Значение: &#39;delivering&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -4058,7 +4047,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -4079,7 +4068,7 @@
 <td>Значение: &#39;delivered&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
@@ -4090,7 +4079,7 @@
     </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partnerOrderID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+    </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -4111,7 +4100,7 @@
 <td>Значение: &#39;cancelled&#39;</td>
 </tr>
 <tr>
-<td><code>partnerOrderID</code><br> string</td>
+<td><code>partnerOrderId</code><br> string</td>
 <td>Необязательно</td>
 <td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
 </tr>
