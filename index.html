@@ -388,9 +388,9 @@
                     <span class="nt">&lt;point</span> <span class="na">id=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/points&gt;</span>
                 <span class="nt">&lt;delivery-options&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">cost=</span><span class="s">"338"</span> <span class="na">days=</span><span class="s">"2-3"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">cost=</span><span class="s">"979"</span> <span class="na">days=</span><span class="s">"3"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">cost=</span><span class="s">"488"</span> <span class="na">days=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">deliveryId=</span><span class="s">"1"</span> <span class="na">cost=</span><span class="s">"338"</span> <span class="na">days=</span><span class="s">"2-3"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">deliveryId=</span><span class="s">"2"</span> <span class="na">cost=</span><span class="s">"979"</span> <span class="na">days=</span><span class="s">"3"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">deliveryId=</span><span class="s">"3"</span> <span class="na">cost=</span><span class="s">"488"</span> <span class="na">days=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/delivery-options&gt;</span>
                 <span class="nt">&lt;categoryId&gt;</span>8<span class="nt">&lt;/categoryId&gt;</span>
                 <span class="nt">&lt;name&gt;</span>Ноутбук Apple MacBook Pro 15,4" with Touch Bar 2,6GHz/16Gb/512GbSSD/Radeon Pro 560X/MacOS Silver (MR972RU/A)<span class="nt">&lt;/name&gt;</span>
@@ -558,7 +558,7 @@
 <td>Параметр содержит список сроков и стоимости доставки для данного товара. Родительский элемент для <a href="#option">option</a>.</td>
 </tr>
 <tr>
-<td><code>categoryId</code> <br> Обязательный</td>
+<td><code>categoryId</code> <br> Необязательный</td>
 <td>Идентификатор категории товара для данного предложения</td>
 </tr>
 <tr>
@@ -616,8 +616,16 @@
 </tr>
 </thead><tbody>
 <tr>
+<td><code>deliveryId</code><br> Необязательный</td>
+<td>Идентификатор доставки. Обязательный параметр, если доступно несколько вариантов доставки.</td>
+</tr>
+<tr>
 <td><code>cost</code><br> Обязательный</td>
 <td>Стоимость доставки.</td>
+</tr>
+<tr>
+<td><code>name</code><br> Необязательный</td>
+<td>Наименование варианта доставки.</td>
 </tr>
 <tr>
 <td><code>days</code><br> Необязательный</td>
@@ -1388,7 +1396,7 @@
 </tr>
 </tbody></table>
 
-<p>Так же, если партнер ответил ошибкой на зарос резерва или прокидывание статуса, Marketpalce будет ретраить эти запросы до получения валидного ответа, либо, пока не исчерпает лимит ретраев. Конечными HTTP-статусами являются: 200, 201, 422, 404. Если партнер ответит одним из этих кодов, то дальнейшие ретраи производиться не будут. Все остальные HTTP-code и невалидные ответы приведут к повторным запросам. Лимит ретраев - 10 штук, интервал между повторами не является константой и увеличивается с каждой неудачной попыткой. Данный механизм, в основном, является защитой от потери сообщений по API в случае кратковременной недоступности сервера партнера (например при получении HTTP-code 500, 503, 504).</p>
+<p>Так же, если партнер ответил ошибкой на запрос резерва или прокидывание статуса, Marketpalce будет ретраить эти запросы до получения валидного ответа, либо пока не исчерпает лимит ретраев. Конечными HTTP-статусами являются: 200, 201, 422, 404. Если партнер ответит одним из этих кодов, то выполнение запроса будет считаться успешным и дальше повторяться не будет. Все остальные HTTP-code и невалидные ответы приведут к повторным запросам. Лимит ретраев 10 штук, интервал между повторами не является константой и увеличивается с каждой неудачной попыткой. Данный механизм, в основном, является защитой от потери сообщений по API в случае кратковременной недоступности сервера партнера (например, при получении HTTP-code 500, 503, 504).</p>
 <h2 id='post-order-orderid-status'>→ POST /order/:orderId/status</h2>
 <p><strong>Передача статуса заказа партнеру</strong></p>
 
@@ -1795,7 +1803,7 @@
                 </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validation error"</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="err">А</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
