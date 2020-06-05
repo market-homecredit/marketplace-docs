@@ -695,15 +695,15 @@ curl -X POST \
     "transactions": [
         {
             "offerId": "123",
-            "transactionId": "iddqd"
+            "extTransactionId": "iddqd"
         },
         {
             "offerId": "123",
-            "transactionId": "idkfa"
+            "extTransactionId": "idkfa"
         },
         {
             "offerId": "456",
-            "transactionId": "idbehold+l"
+            "extTransactionId": "idbehold+l"
         }
     ]
 }'
@@ -723,7 +723,7 @@ curl -X POST \
 | Параметр | Обязательность | Описание |
 |----------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------|
 | `offerId`<br>string | Обязательно | Идентификатор товара из YML-каталога |
-| `transactionId`<br>string | Обязательно | Идентификатор транзакции, принадлежащей указанному в массиве offerId |
+| `extTransactionId`<br>string | Обязательно | Идентификатор транзакции, принадлежащей указанному в массиве offerId |
 <br>
 
 `POST https://example.com/order/:orderId/status со статусом SIGNED и CANCELLED`
