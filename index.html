@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="images/favicon.ico" rel="icon" type="image/ico" />
     <title>Markeplace_HC</title>
 
-    <style>
+    <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -43,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -127,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -142,16 +141,13 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
 }
 .highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
   color: #ffffff;
 }
 .highlight .ni {
@@ -166,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -177,6 +173,9 @@
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -197,20 +196,107 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-1e5be7e6.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-03c5ece4.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-8f5ea5a5.js"></script>
+
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-f4150343.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -361,7 +447,7 @@
 <blockquote>
 <p>Пример выгрузки:</p>
 </blockquote>
-<pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;yml_catalog</span> <span class="na">date=</span><span class="s">"2018-01-29 12:56"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;shop&gt;</span>
         <span class="nt">&lt;name&gt;</span>Online Retail Company<span class="nt">&lt;/name&gt;</span>
@@ -432,7 +518,7 @@
         <span class="nt">&lt;/offers&gt;</span>
     <span class="nt">&lt;/shop&gt;</span>
 <span class="nt">&lt;/yml_catalog&gt;</span>
-</code></pre>
+</code></pre></div>
 <p>Каталог обязательно должен иметь XML-заголовок, который начинается с первой строки, с нулевого элемента, в заголовке присутствуют атрибуты версии и используемая кодировка. Во избежание ошибок парсинга, допускается использование только кодировки UTF-8. Пример заголовка: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
 
 <p>Мы не используем список категорий, которые передаются в фиде, так как все товары на нашей стороне обрабатываются вручную.</p>
@@ -536,7 +622,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><code>url</code><br>  Необязательный</td>
+<td><code>url</code><br>  Обязательный</td>
 <td>URL страницы товара на сайте партнера.</td>
 </tr>
 <tr>
@@ -609,7 +695,7 @@
 <li>артикул вендора (при наличии)</li>
 </ul>
 
-<p><img src="images/name_offers.jpg" alt="Name offers" /></p>
+<p><img src="images/name_offers-0dede8af.jpg" alt="" /></p>
 <h3 id='credit'>Атрибуты credit</h3>
 <table><thead>
 <tr>
@@ -673,7 +759,7 @@
 <blockquote>
 <p>Пример подготовленного CSV со списком точек самовывоза:</p>
 </blockquote>
-<pre class="highlight markdown tab-markdown"><code>Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
+<div class="highlight"><pre class="highlight markdown tab-markdown"><code>Id,TradingPoint,RegionCode,RegionName,Address,workingDays,Saturday,Sunday
 "1",737373,1,"Москва","ул. Сладкоежек, 17","09:00-21:00",,
 "2",737374,2,"Санкт-Петербург","пр-д Кибернетиков, 64","07:30-15:00","false",
 "3",737373,1,"Москва","ул. Трактористов, 11","10:00-20:00","10:00-16:00","false"
@@ -684,7 +770,7 @@
 "8",737374,2,"Санкт-Петербург","ул. Живая, 13","10:00-20:00","false",
 "9",737373,1,"Москва","ул. Роз, 91","00:00-24:00",,
 "10",737374,2,"Санкт-Петербург","ул. 3-х Озер, 12","09:00-21:00","false",
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -724,18 +810,18 @@
 <td>Режим работы в воскресенье, формат XX:XX-XX:XX, например 11:00-20:00. Если поле остается пустым, берется значение из Saturday, если указано false - в воскресенье пункт не работает.</td>
 </tr>
 </tbody></table>
-<h1 id='a1ce3c1a83'>Аутентификация</h1><pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/check <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -H <span class="s1">'X-token: 1q2w3e4r5t6y'</span> <span class="se">\</span>
-  -d <span class="s1">'{"offersRequest":[
+<h1 id='a1ce3c1a83'>Аутентификация</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-token: 1q2w3e4r5t6y'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
   {
     "offerId":"123",
     "quantity":1,
     "regionId":77
   }
 ]}'</span>
-</code></pre>
+</code></pre></div>
 <p>Для обеспечения более высокого уровня защищенности, вы можете сгенерировать токен, который Маркетплейс будет использовать при выполнении запросов по API.</p>
 
 <p>Сгенерированный вами токен будет передаваться в хэдере <strong>X-token</strong>, как на примере.</p>
@@ -743,19 +829,19 @@
 <aside class="notice">Для установления шифрованного TLS соединения по протоколу HTTPS в Маркетплейс используется библиотека <a href="https://www.openssl.org">openssl 1.1.1</a>, из-за чего могут возникнуть проблемы при подключении с некоторыми устаревшими и небезопасными алгоритмами, напрмер SHA-1.</aside>
 <h1 id='3299bea1e9'>Процесс работы с заказом</h1><h2 id='c-api'>Обработка заказов c корзиной посредством обмена статусами по API</h2><h3 id='23807e4ae5'>Процесс покупки товара с доставкой</h3>
 <p>В этом сценарии показан процесс обработки заказа с доставкой. Блоки выделенные серым цветом означают вызов метода API. Значения на переходах, написанные латиницей, означают статус, передаваемый в методе.
-<img src="images/MRKT_FB_Delivery.png" alt="Mrkt fb delivery" /></p>
+<img src="images/MRKT_FB_Delivery-ca430a8e.png" alt="" /></p>
 <h3 id='d5ae71bb97'>Процесс покупки товара с самовывозом</h3>
 <p>Данный сценарий отличается от предыдущего лишь финальным этапом, в котором партнер доставляет товар на пункт самовывоза.
-<img src="images/MRKT_FB_Pickup.png" alt="Mrkt fb pickup" /></p>
+<img src="images/MRKT_FB_Pickup-463b3bd1.png" alt="" /></p>
 <h3 id='d2e5a34d75'>Процесс отмены траназкции и заказа со стороны партнера</h3>
 <p>Этот сценарий описывает полную или частичную отмену заказа с помощью новых методов в партнерском API 2.1.
-<img src="images/MRKT_FB_Cancel.png" alt="Mrkt fb cancel" /></p>
+<img src="images/MRKT_FB_Cancel-84b14c48.png" alt="" /></p>
 <h2 id='api'>Обработка заказов Мультибанка посредством обмена статусами по API</h2><h3 id='e254debde2'>Покупка товара с доставкой курьером</h3>
 <p>Данный сценарий предполагает, что Покупатель подписывает договор без участия партнера, после чего инициируется процесс доставки.
-<img src="images/image_delivery_curier.png" alt="Image delivery curier" /></p>
+<img src="images/image_delivery_curier-3a11249e.png" alt="" /></p>
 <h3 id='c3b63905bf'>Покупка товара с последующим самовывозом</h3>
 <p>Данный сценарий предполагает, что в точке самовывоза партнера присутствует кредитный специалист, который имеет доступ в систему Банка и полностью сопровождает процесс подписания договора с Покупателем.
-<img src="images/image_delivery_self.png" alt="Image delivery self" /></p>
+<img src="images/image_delivery_self-533e90a9.png" alt="" /></p>
 <h1 id='api-2'>Версии партнерского API</h1>
 <aside class="success"><b>Описанные в этом разделе особенности обновлений API соответствуют фазам внедрения на Маркетплейс нового функционала, для работы с которым партнерам необходимо поэтапно внести изменения в партнерское API со своей стороны.</b></aside>
 <h2 id='1-0'>1.0 - Текущая версия, оформление заказа на кредитный договор</h2>
@@ -804,10 +890,10 @@
 <blockquote>
 <p>Пример запроса POST /order/check:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/check <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{"offersRequest":[
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
   {
     "offerId":"123",
     "quantity":1,
@@ -819,7 +905,7 @@
     "regionId":77
   }
 ]}'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -863,37 +949,37 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"points"</span><span class="p">:[</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
             </span><span class="s2">"0"</span><span class="w">
          </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"points"</span><span class="p">:[</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
             </span><span class="s2">"0"</span><span class="w">
          </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"DeliveryOptions"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"delivery"</span><span class="p">:[</span><span class="w">
+   </span><span class="nl">"DeliveryOptions"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"delivery"</span><span class="p">:[</span><span class="w">
          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"DeliveryID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"DeliveryName"</span><span class="p">:</span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Cost"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Days"</span><span class="p">:</span><span class="s2">"1-2"</span><span class="w">
+            </span><span class="nl">"DeliveryID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"DeliveryName"</span><span class="p">:</span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Cost"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Days"</span><span class="p">:</span><span class="s2">"1-2"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -978,11 +1064,11 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
@@ -1011,10 +1097,10 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/reserve:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/18022600000999/reserve <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/18022600000999/reserve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
   "orderId": "18022600000999", 
   "offerIds": [
     {
@@ -1039,7 +1125,7 @@
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
 }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1224,21 +1310,21 @@
 </tbody></table>
 <h3 id='1300eba048-2'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Оба товара зарезервированы.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1269,23 +1355,23 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Один из товаров недоступен для резервирования.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1321,22 +1407,22 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Оба товара недоступны для резервирования.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1369,16 +1455,16 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"clientInfo"</span><span class="p">:{</span><span class="w">
-            </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"phone is required"</span><span class="w">
+         </span><span class="nl">"clientInfo"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"phone is required"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1437,11 +1523,11 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/status:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/order/18022600000999/status <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "orderId": "18022600000999",
     "partnerOrderId": "12345",
     "status": "PAID",
@@ -1460,7 +1546,7 @@
         }
     ]
 }'</span>
-</code></pre><h3 id='c35d6d472e-3'>Входные параметры</h3>
+</code></pre></div><h3 id='c35d6d472e-3'>Входные параметры</h3>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1516,17 +1602,17 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/status:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/order/18022600000999/status <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: python-requests/2.22.0'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: python-requests/2.22.0'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "orderId":"18022600000999",
     "partnerOrderId":"12345",
     "status":"SIGNED"
   }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1556,13 +1642,13 @@
 <blockquote>
 <p>Примеры ответов в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1588,12 +1674,12 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1619,13 +1705,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"address is not in delivery area"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"address is not in delivery area"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1658,14 +1744,14 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"not valid status"</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"not valid status"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1716,10 +1802,10 @@
 <blockquote>
 <p>Пример запроса POST /transactions/cancel</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://api.market.homecredit.ru/transactions/cancel <span class="se">\</span>
-  -H <span class="s1">'Auth-key: hduw6q3ei1ufqg183et1ydg18v'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Auth-key: hduw6q3ei1ufqg183et1ydg18v'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "transactions": [
         "hash_hmac1",
         "hash_hmac2",
@@ -1727,7 +1813,7 @@
     ]
 }'</span>
 
-</code></pre>
+</code></pre></div>
 <aside class="warning">Наличие выданного партнеру Auth-key в хэдере запроса обязательно!</aside>
 
 <table><thead>
@@ -1754,14 +1840,14 @@
 </ul>
 <h3 id='e1db9b4414'>Примеры ответов с описанием параметров</h3>
 <p><code>HTTP status code 200 OK — Запрос был успешно принят и передан в обработку.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Принято к отмене"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Принято к отмене"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1793,21 +1879,21 @@
 
 <p><br>
 <code>HTTP status code 422 Unprocessable Entity — Неверная сигнатура запроса.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"non-fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"non-fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transactions"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validation error"</span><span class="w">
+                </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transactions"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validation error"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1859,20 +1945,20 @@
 
 <p><br>
 <code>HTTP status code 403 Forbidden — Доступ запрещен.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"non-fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"non-fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Недопустимый запрос"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not allowed"</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Недопустимый запрос"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not allowed"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1919,12 +2005,12 @@
 
 <p><br>
 <code>HTTP status code 429 Too Many Requests — Превышен лимит обращений от партнера.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -1971,12 +2057,12 @@
 <blockquote>
 <p>Пример запроса POST /order/transaction если транзакция найдена</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/order/transaction <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: python-requests/2.22.0'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: python-requests/2.22.0'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "data":{
     "transactions": [
         {
@@ -1986,39 +2072,39 @@
     ]
 }
 }'</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Транзакцию невозможно отменить</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"transactions"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"transactions"</span><span class="p">:[</span><span class="w">
          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"hash_hmac2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"Error"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"hash_hmac2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detail"</span><span class="p">:</span><span class="s2">"Error"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Транзакция не найдена</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"transactions"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"transactions"</span><span class="p">:[</span><span class="w">
          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"hash_hmac3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"NOT_FOUND"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"Not found"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"hash_hmac3"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"NOT_FOUND"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detail"</span><span class="p">:</span><span class="s2">"Not found"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2073,12 +2159,12 @@
 <blockquote>
 <p>Пример запроса POST /orders</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/orders <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'User-Agent: python-requests/2.22.0'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'User-Agent: python-requests/2.22.0'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "orders": [
         "18022600000995",
         "18022600000996",
@@ -2088,7 +2174,7 @@
     ]
   }'</span>
 
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2139,41 +2225,41 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orders"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orders"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000995"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12341"</span><span class="w">
+         </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000995"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12341"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000996"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12343"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"trackId"</span><span class="p">:</span><span class="s2">"TK456789"</span><span class="w">
+         </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000996"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12343"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"trackId"</span><span class="p">:</span><span class="s2">"TK456789"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000997"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12342"</span><span class="w">
+         </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000997"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12342"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000998"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12344"</span><span class="w">
+         </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000998"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"partnerOrderId"</span><span class="p">:</span><span class="s2">"12344"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"not found"</span><span class="w">
+         </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"not found"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2232,14 +2318,14 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"not valid Id"</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"not valid Id"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
@@ -2271,10 +2357,10 @@
 <blockquote>
 <p>Пример запроса POST /order/check:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/check <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{"offersRequest":[
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
   {
     "offerId":"123",
     "quantity":1,
@@ -2288,7 +2374,7 @@
     "productCode":"0-0-12"
   }
 ]}'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2343,37 +2429,37 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"points"</span><span class="p">:[</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
             </span><span class="s2">"0"</span><span class="w">
          </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"points"</span><span class="p">:[</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
             </span><span class="s2">"0"</span><span class="w">
          </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"DeliveryOptions"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"delivery"</span><span class="p">:[</span><span class="w">
+   </span><span class="nl">"DeliveryOptions"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"delivery"</span><span class="p">:[</span><span class="w">
          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"DeliveryID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"DeliveryName"</span><span class="p">:</span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Cost"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Days"</span><span class="p">:</span><span class="s2">"1-2"</span><span class="w">
+            </span><span class="nl">"DeliveryID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"DeliveryName"</span><span class="p">:</span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Cost"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Days"</span><span class="p">:</span><span class="s2">"1-2"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2460,11 +2546,11 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
@@ -2490,10 +2576,10 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/reserve:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/18022600000999/reserve <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/18022600000999/reserve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
   "orderId": "18022600000999", 
   "offerIds": [
     {
@@ -2517,7 +2603,7 @@
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
 }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2703,21 +2789,21 @@
 </tbody></table>
 <h3 id='1300eba048-7'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Оба товара зарезервированы.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2748,23 +2834,23 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Один из товаров недоступен для резервирования.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2800,22 +2886,22 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Оба товара недоступны для резервирования.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"offersResponse"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2848,16 +2934,16 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"clientInfo"</span><span class="p">:{</span><span class="w">
-            </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"phone is required"</span><span class="w">
+         </span><span class="nl">"clientInfo"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"phone is required"</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2910,16 +2996,16 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/status:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/order/1234567890/status/ <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "orderId":"1234567890",
     "PartnerOrderId":"777",
     "status":"SIGNED"
   }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2949,13 +3035,13 @@
 <blockquote>
 <p>Примеры ответов в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -2981,13 +3067,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3013,13 +3099,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address is not in delivery area"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address is not in delivery area"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3052,13 +3138,13 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
     </span><span class="p">}</span><span class="w"> 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3082,11 +3168,11 @@
 <blockquote>
 <p>Пример запроса GET /order/:orderId:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
   https://example.com/order/1234567890 <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 
-</code></pre>
+</code></pre></div>
 <p><code>GET https://example.com/order/:orderId</code></p>
 <h3 id='8c3e561fee-3'>Логика ответа</h3>
 <p>Возможные сценарии:</p>
@@ -3127,12 +3213,12 @@
 </aside>
 <h3 id='1300eba048-9'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Товар зарезервирован.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3158,13 +3244,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3195,12 +3281,12 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Заказ доставлен.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3226,13 +3312,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Заказ отклонен.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3265,13 +3351,13 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
     </span><span class="p">}</span><span class="w"> 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
@@ -3300,16 +3386,16 @@
 <blockquote>
 <p>Пример запроса POST /order/check/:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/check/ <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{"offersRequest":[
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
 {"offerId":"123",
 "quantity":1,
 "regionId":77,
 "productCode":"0-0-6"}
 ]}'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3360,29 +3446,29 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"offersResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"offersResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"0"</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"DeliveryOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"DeliveryOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"DeliveryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"DeliveryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доставка СДЭК(склад-склад)"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-2"</span><span class="w">
+                </span><span class="nl">"DeliveryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"DeliveryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доставка СДЭК(склад-склад)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-2"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3462,11 +3548,11 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
@@ -3491,10 +3577,10 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/reserve:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://example.com/order/18022500002104/reserve <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/18022500002104/reserve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
   "orderId": "18022500002104", 
   "offerIds": [
     {
@@ -3511,7 +3597,7 @@
   "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
   "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
 }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3695,12 +3781,12 @@
 </tbody></table>
 <h3 id='1300eba048-11'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Товар зарезервирован(ответ на метод reserve).</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3726,12 +3812,12 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар недоступен для резервирования.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3764,15 +3850,15 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="s2">"clientInfo"</span><span class="p">:</span><span class="w"> 
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="nl">"clientInfo"</span><span class="p">:</span><span class="w"> 
         </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone is required"</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone is required"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3825,16 +3911,16 @@
 <blockquote>
 <p>Пример запроса POST /order/:orderId/status:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
   https://example.com/order/1234567890/status/ <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="s1">'{
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
     "orderId":"1234567890",
     "PartnerOrderId":"777",
     "status":"SIGNED"
   }'</span>
-</code></pre>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3864,13 +3950,13 @@
 <blockquote>
 <p>Примеры ответов в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3898,13 +3984,13 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
     </span><span class="p">}</span><span class="w"> 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -3928,11 +4014,11 @@
 <blockquote>
 <p>Пример запроса GET /order/:orderId:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
   https://example.com/order/1234567890 <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 
-</code></pre>
+</code></pre></div>
 <p><code>GET https://example.com/order/:orderId</code></p>
 <h3 id='8c3e561fee-4'>Логика ответа</h3>
 <p>Возможные сценарии:</p>
@@ -3973,12 +4059,12 @@
 </aside>
 <h3 id='1300eba048-13'>Параметры ответа</h3>
 <p><code>HTTP status code 200 OK — Товар зарезервирован.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -4004,13 +4090,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -4041,12 +4127,12 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Заказ доставлен.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -4072,13 +4158,13 @@
 </tbody></table>
 
 <p><code>HTTP status code 200 OK — Заказ отклонен.</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Параметр</th>
@@ -4111,13 +4197,13 @@
 <blockquote>
 <p>Пример ответа в JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"errorFields"</span><span class="p">:[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
     </span><span class="p">}</span><span class="w"> 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Код HTTP</th>
