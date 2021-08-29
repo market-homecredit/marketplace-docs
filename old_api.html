@@ -1,0 +1,2244 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>HCB Markeplace – Устаревшие методы API</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-1e5be7e6.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-03c5ece4.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-8f5ea5a5.js"></script>
+
+  </head>
+
+  <body class="old_api" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-f4150343.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#api-2-0-1-0" class="toc-h1 toc-link" data-title="Описание устаревших методов API (2.0 и 1.0)">Описание устаревших методов API (2.0 и 1.0)</a>
+          </li>
+          <li>
+            <a href="#api-2-0" class="toc-h1 toc-link" data-title="API версии 2.0 с поддержкой корзины товаров">API версии 2.0 с поддержкой корзины товаров</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-order-check" class="toc-h2 toc-link" data-title="→ POST /order/check">→ POST /order/check</a>
+                  </li>
+                  <li>
+                    <a href="#post-order-orderid-reserve" class="toc-h2 toc-link" data-title="→ POST /order/:orderId/reserve">→ POST /order/:orderId/reserve</a>
+                  </li>
+                  <li>
+                    <a href="#post-order-orderid-status" class="toc-h2 toc-link" data-title="→ POST /order/:orderId/status">→ POST /order/:orderId/status</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-orderid" class="toc-h2 toc-link" data-title="→ GET /order/:orderId">→ GET /order/:orderId</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-1-0" class="toc-h1 toc-link" data-title="API версии 1.0 (устаревшее)">API версии 1.0 (устаревшее)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-order-check-2" class="toc-h2 toc-link" data-title="POST /order/check/">POST /order/check/</a>
+                  </li>
+                  <li>
+                    <a href="#post-order-orderid-reserve-2" class="toc-h2 toc-link" data-title="POST /order/:orderId/reserve">POST /order/:orderId/reserve</a>
+                  </li>
+                  <li>
+                    <a href="#post-order-orderid-status-2" class="toc-h2 toc-link" data-title="POST /order/:orderId/status">POST /order/:orderId/status</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-orderid-2" class="toc-h2 toc-link" data-title="GET /order/:orderId">GET /order/:orderId</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://docs.homecred.it/'>Главная</a></li>
+            <li><a href='https://market.homecredit.ru'>Сервис "Товары в рассрочку"</a></li>
+            <li><a href='mailto:MPIntegration@homecredit.ru'>Обратная связь</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='api-2-0-1-0'>Описание устаревших методов API (2.0 и 1.0)</h1>
+<p>Описание методов партнерского API которое представлено ниже – это устаревшие методы, ставшие частью истории нашего сервиса. Мы все еще сохраняем поддержку этих версий для обеспечения обратной совместимости, но они не поддерживают большую часть новой и классной функциональности, которую мы внедряем и развиваем на сервисе. Чтобы вернуться к описанию актуальных методов партнерского API, нажмите <a href='https://docs.homecred.it/#api-2-1'>сюда</a>.</p>
+<h1 id='api-2-0'>API версии 2.0 с поддержкой корзины товаров</h1><h2 id='post-order-check'>→ POST /order/check</h2>
+<p><strong>Проверка наличия товара у партнера.</strong><br>
+Метод <strong>check</strong> означает поступающий партнеру запрос на проверку наличия одного или нескольких товаров в выбранном покупателем регионе и вызывается в двух случаях:</p>
+
+<ul>
+<li>когда покупатель добавляет товар в корзину (в запросе отправляется один массив с offerId)</li>
+<li>в момент когда покупатель переходит из корзины к оформлению заказа (в запросе отправляются все товары, которые покупатель добавил в корзину, это может быть один или несколько массивов с  разными offerId и productCode)</li>
+</ul>
+
+<p>В ответ на запрос партнер должен уведомить о доступности товара, а также прислать условия доставки и самовывоза. Расчет стоимости и срока доставки заказа (в том числе на пункт выдачи) должен производиться на основе доступных для резерва товаров. (Например, если доступно только 3 из 5 переданных в запросе позиций, стоимость доставки должна быть расчитана только для них).</p>
+<h3 id='c35d6d472e'>Входные параметры</h3>
+<p><code>POST https://example.com/order/check</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/check:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
+  {
+    "offerId":"123",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-6"
+  },
+  {
+    "offerId":"456",
+    "quantity":1,
+    "regionId":77,
+    "productCode":"0-0-12"
+  }
+]}'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offersRequest</code><br>  Array of <a href="#offerrequest">{offerRequest}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов с запросом на проверку наличия товаров, которые выбрал покупатель.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offerRequest</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code> <br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>quantity</code><br>integer</td>
+<td>Обязательно</td>
+<td>Количество единиц товара для бронирования.</td>
+</tr>
+<tr>
+<td><code>regionId</code> <br>integer</td>
+<td>Обязательно</td>
+<td>Идентификатор региона</td>
+</tr>
+<tr>
+<td><code>productCode</code><br> string</td>
+<td>Необязательно</td>
+<td>Код кредитного продукта (срок рассрочки).<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Срок рассрочки является важным параметром только для процесса с кредитным договором и будет удален из запроса в версии API 2.1 (с поддержкой кредитного лимита).
+</aside>
+<h3 id='1300eba048'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Список товаров с указанием наличия и условий.</code></p>
+
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"0"</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"points"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"0"</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"DeliveryOptions"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"delivery"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"DeliveryID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"DeliveryName"</span><span class="p">:</span><span class="s2">"Доставка СДЭК"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Cost"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Days"</span><span class="p">:</span><span class="s2">"1-2"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offersResponse Array of <a href="#offerresponse">{offerResponse}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов со статусом резерва по каждому из запрошенных товаров.</td>
+</tr>
+<tr>
+<td>DeliveryOptions <a href="#deliveryoption">{DeliveryOption}</a></td>
+<td>Обязательно</td>
+<td>Дополнительная информация по параметрам доставки, которую сможет выбрать покупатель. Партнер должен предоставить варианты доставки для всей группы товаров.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offerResponse</strong>
+<aside class="notice">
+В случае наличия самовывоза, необходимо сначала указать deliveryOptions со всеми доступными точками самовывоза, при этом для каждого оффера должно быть указано, в какой точке он конкретно доступен в массиве &quot;points&quot;.
+</aside></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code><br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>status</code><br>string</td>
+<td>Обязательно</td>
+<td>Варианты:<ul><li>‘available’ — товар доступен;</li><li>‘unavailable’ — товар недоступен.</li></ul></td>
+</tr>
+<tr>
+<td><code>quantity</code><br>integer</td>
+<td>Обязательно</td>
+<td>Доступное количество товара.</td>
+</tr>
+<tr>
+<td><code>points</code><br> Array of string</td>
+<td>Обязательно</td>
+<td>Идентификаторы пунктов самовывоза, в которых доступен товар.<br>Также необходимо добавлять в список 0, если доступна доставка курьером. Пустой массив - товар недоступен.</td>
+</tr>
+<tr>
+<td><code>reason</code><br>string</td>
+<td>Необязательно</td>
+<td>Указывается, если товар недоступен (пример: “not in stock”).</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект DeliveryOption</strong>
+<aside class="warning">
+Обратите внимание, что объект &quot;deliveryOptions&quot;(опции по доставке) должен быть один для всех офферов!
+Соответственно, стоимость доставки передается общей суммой за доставку нескольких товаров.
+</aside></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>delivery</code><br> Array of Objects</td>
+<td>Обязательно, при наличии доставки</td>
+<td>Список вариантов доставки с указанием параметров: <ul><li><strong>deliveryId</strong> (int) — идентификатор службы доставки в системе партнера (будет передано при резервировании заказа);</li> <li><strong>deliveryName</strong> (string) — название службы доставки (будет отображено Покупателю);</li> <li><strong>cost</strong> (int) — стоимость доставки (если параметр отсутствует, то стоимость необходимо уточнять у службы доставки);</li><li><strong>days</strong> (string) — время доставки в днях (возможно указать интервал “5-7”, который интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
+</tr>
+<tr>
+<td><code>pickup</code><br> Array of Objects</td>
+<td>Обязательно, при наличии самовывоза</td>
+<td>Список точек самовывоза доступные для заказа с указанием параметров:<ul><li> <strong>point</strong> (string) — идентификатор точки самовывоза из CSV;</li> <li><strong>cost</strong> (int) — стоимость за услугу самовывоза, можно указать 0 или не указывать данные параметр если самовывоз бесплатный;</li> <li><strong>days</strong> (string) — время доставки товара на точку самовывоза, после которой товар можно забрать, 0 - если можно забрать в тот же день (возможно указать интервал “5-7”, который интерпретируется как “доставка на пункт выдачи от 5 до 7 дней”).</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Код HTTP</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5xx</td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса). В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается.  Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+</tbody></table>
+<h2 id='post-order-orderid-reserve'>→ POST /order/:orderId/reserve</h2>
+<p><strong>Резервирование товара у партнера</strong><br>
+После того, как покупатель заполнил заявку, выбрал способ доставки и его заявка была одобрена системой скоринга банка, партнеру приходит запрос на резервирование товара до момента подписания кредитного договора клиентом.
+В заказе может быть любое число товаров, которые будут переданы в массивах запросов, описанных ниже, поэтому для примера используется случай, когда в массиве передано два товара.</p>
+<h3 id='c35d6d472e-2'>Входные параметры</h3>
+<p><code>POST https://example.com/order/:orderId/reserve</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/:orderId/reserve:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/18022600000999/reserve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+  "orderId": "18022600000999", 
+  "offerIds": [
+    {
+      "offerId": "123", 
+      "quantity": 2, 
+      "price": 19000.0,
+      "priceTotal": 20000.0,
+      "productCode": "0-0-6"
+    },
+    {
+      "offerId": "456", 
+      "quantity": 1, 
+      "price": 10500.0,
+      "priceTotal": 11000.0,
+      "productCode": "0-0-12"
+    }
+    ], 
+  "regionId": 77, 
+  "pointId": "0",
+  "DeliveryId": 7,
+  "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
+  "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
+}'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br>  string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса.</td>
+</tr>
+<tr>
+<td><code>offerIds</code><br> Array of <a href="#offer-3">{offer}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов с идентификаторами товаров и их количество.</td>
+</tr>
+<tr>
+<td><code>regionId</code><br> integer</td>
+<td>Обязательно</td>
+<td>Идентификатор региона из списка.</td>
+</tr>
+<tr>
+<td><code>pointId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор точки самовывоза из CSV, 0 - если выбрана доставка курьером.</td>
+</tr>
+<tr>
+<td><code>DeliveryId</code><br> integer</td>
+<td>Необязательно</td>
+<td>Идентификатор службы доставки в системе партнера.</td>
+</tr>
+<tr>
+<td><code>address</code><br> <a href="#address">{address}</a></td>
+<td>Необязательно</td>
+<td>Адрес в формате КЛАДР, указывается, если выбрана доставка курьером.</td>
+</tr>
+<tr>
+<td><code>client</code><br> <a href="#clientinfoubu">{clientInfo}</a></td>
+<td>Обязательно(для метода reserve)</td>
+<td>Информация о клиенте.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offer</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>quantity</code><br> integer</td>
+<td>Обязательно</td>
+<td>Количество единиц товара.</td>
+</tr>
+<tr>
+<td><code>price</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара с учетом скидки, предоставляемой партнером. Размер скидки зависит от используемого кредитного продукта (срока рассрочки) и согласован с партнером.</td>
+</tr>
+<tr>
+<td><code>priceTotal</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара без учета скидки, то есть стоимость товара, которую партнер заявил в своем каталоге.</td>
+</tr>
+<tr>
+<td><code>productCode</code><br> string</td>
+<td>Необязательно</td>
+<td>Код кредитного продукта (срок рассрочки).<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект address</strong></p>
+
+<p>Столбец &quot;Обязательность&quot; в этой таблице указывает на элементы, которые могут содежаться в массиве адреса. В зависимости от введенного клиентом адреса, распознавание его и заполнение в теги может быть произвольным, просьба советоваться с сотрудниками интеграции при установке каких-либо проверок на обязательность тех или иных полей в этом массиве.</p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>country</code><br>  string</td>
+<td>Обязательно</td>
+<td>Код страны по КЛАДР</td>
+</tr>
+<tr>
+<td><code>region</code><br> string</td>
+<td>Обязательно</td>
+<td>Регион</td>
+</tr>
+<tr>
+<td><code>district</code><br>string</td>
+<td>Необязательно</td>
+<td>Район</td>
+</tr>
+<tr>
+<td><code>town</code><br>string</td>
+<td>Необязательно</td>
+<td>Город</td>
+</tr>
+<tr>
+<td><code>locality</code><br>string</td>
+<td>Необязательно</td>
+<td>Населенный пункт</td>
+</tr>
+<tr>
+<td><code>street</code> <br>string</td>
+<td>Обязательно</td>
+<td>Улица</td>
+</tr>
+<tr>
+<td><code>house</code><br> string</td>
+<td>Обязательно</td>
+<td>Дом</td>
+</tr>
+<tr>
+<td><code>flat</code> <br>string</td>
+<td>Необязательно</td>
+<td>Квартира</td>
+</tr>
+<tr>
+<td><code>block</code> <br>string</td>
+<td>Необязательно</td>
+<td>Корпус</td>
+</tr>
+<tr>
+<td><code>building</code> <br>string</td>
+<td>Необязательно</td>
+<td>Строение</td>
+</tr>
+<tr>
+<td><code>zipcode</code> <br>string</td>
+<td>Обязательно</td>
+<td>Индекс</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект clientInfo</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>firstName</code><br>string</td>
+<td>Обязательно</td>
+<td>Имя клиента</td>
+</tr>
+<tr>
+<td><code>lastName</code><br>string</td>
+<td>Обязательно</td>
+<td>Фамилия клиента</td>
+</tr>
+<tr>
+<td><code>middleName</code><br>string</td>
+<td>Необязательно</td>
+<td>Отчество клиента</td>
+</tr>
+<tr>
+<td><code>email</code><br>string</td>
+<td>Необязательно</td>
+<td>E-mail</td>
+</tr>
+<tr>
+<td><code>phone</code><br>string</td>
+<td>Обязательно</td>
+<td>Номер телефона клиента (должен быть ровно 10 цифр, без кода страны)</td>
+</tr>
+</tbody></table>
+<h3 id='1300eba048-2'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Оба товара зарезервированы.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера</td>
+</tr>
+<tr>
+<td><code>offerId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>значение: &quot;reserved&quot;</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Один из товаров недоступен для резервирования.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="s2">"17814"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"reserved"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера</td>
+</tr>
+<tr>
+<td><code>offerId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>значение: &#39;cancelled&#39;</td>
+</tr>
+<tr>
+<td><code>reason</code> <br>string</td>
+<td>Обязательно</td>
+<td>Причина отказа в резервировании (Пример: &#39;address is not in delivery area&#39;)</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Оба товара недоступны для резервирования.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"orderId"</span><span class="p">:</span><span class="s2">"18022500002104"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"offersResponse"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"offerId"</span><span class="p">:</span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"reason"</span><span class="p">:</span><span class="s2">"not in stock"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейса</td>
+</tr>
+<tr>
+<td><code>offerId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>значение: &#39;cancelled&#39;</td>
+</tr>
+<tr>
+<td><code>reason</code><br>string</td>
+<td>Обязательно</td>
+<td>Причина отказа в резервировании (Пример: &#39;address is not in delivery area&#39;)</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-2'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"clientInfo"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"phone is required"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>5xx</code></td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса).<br> В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается. Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+<h2 id='post-order-orderid-status'>→ POST /order/:orderId/status</h2>
+<p><strong>Передача статуса кредитной заявки партнера</strong></p>
+
+<p>Данным методом Маркетплейс передает партнеру статус заявки в случае подписания(signed), что для партнера служит сигналом для доставки заказа клиенту или на пункт самовывоза. Либо отменяет заказ.</p>
+
+<aside class="notice">
+Возможные сценарии:
+</aside>
+
+<table><thead>
+<tr>
+<th>Статус</th>
+<th>Описание</th>
+<th>Действия партнера</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Кредит отменен<br>(CANCELLED)</td>
+<td>Отказ клиента. Также можно интерпретировать как отмена бронирования.</td>
+<td>Партнер отменяет заказ.</td>
+</tr>
+<tr>
+<td>Кредит подписан<br>(SIGNED)</td>
+<td>Покупатель подписал кредитный договор и ожидает получение товара.</td>
+<td>Партнер может выдать товар на пункте самовывоза, либо начинает процесс доставки.</td>
+</tr>
+</tbody></table>
+<h3 id='c35d6d472e-3'>Входные параметры</h3>
+<p><code>POST https://example.com/order/:orderId/status</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/:orderId/status:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+  https://example.com/order/1234567890/status/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "orderId":"1234567890",
+    "PartnerOrderId":"777",
+    "status":"SIGNED"
+  }'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования.</td>
+</tr>
+<tr>
+<td><code>status</code><br>string</td>
+<td>Обязательно</td>
+<td>Статус кредитной заявки (передается в качестве url-параметра).<br> Возможные варианты:<br><ul><li> CANCELLED - Кредит отменен.Отказ клиента.</li> <li>SIGNED - Кредит подписан.</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='1300eba048-3'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK —  Товар принят в обработку.</code></p>
+
+<blockquote>
+<p>Примеры ответов в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;reserved&#39;</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;delivering&#39;.</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Товар не будет доставлен(Отмена заказа).</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address is not in delivery area"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;reserved&#39;</td>
+</tr>
+<tr>
+<td><code>reason</code> <br> string</td>
+<td>Обязательно</td>
+<td>Причина отказа (Пример: &#39;address is not in delivery area&#39;).</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-3'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>5xx</code></td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса).<br> В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается. Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+<h2 id='get-order-orderid'>→ GET /order/:orderId</h2>
+<blockquote>
+<p>Пример запроса GET /order/:orderId:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+  https://example.com/order/1234567890 <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+
+</code></pre></div>
+<p><code>GET https://example.com/order/:orderId</code></p>
+<h3 id='8c3e561fee'>Логика ответа</h3>
+<p>Возможные сценарии:</p>
+
+<table><thead>
+<tr>
+<th>Статус</th>
+<th>Описания</th>
+<th>Действия MarketPlace</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Товар зарезервирован (reserved)</td>
+<td>Партнер подтвердил, что выбранный товар зарезервирован до момента подписания Покупателем Кредитного договора</td>
+<td>MarketPlace отправляет договор на подписание (в случае курьерской доставки), либо готовит печатные формы договора (в случае подписания на торговой точке партнера).</td>
+</tr>
+<tr>
+<td>Товар находится в процессе доставки (delivering)</td>
+<td>Партнер сообщает, что товар находится в процессе доставки Покупателю.</td>
+<td>MarketPlace ожидает получение финального статуса.</td>
+</tr>
+<tr>
+<td>Товар доставлен (delivered)</td>
+<td>Партнер сообщает, что товар доставлен/выдан Покупателю.</td>
+<td>MarketPlace начинает процедуру взаиморасчета с партнером.</td>
+</tr>
+<tr>
+<td>Заказ отклонен (cancelled)</td>
+<td>Партнер сообщает, что заказ отклонен. Дополнительно указывает причину отказа в поле reason.</td>
+<td>MarketPlace отклоняет заказ внутри своей базы данных, информирует Покупателя об отмене.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+После того как партнеру пришел статус SIGNED, отменить заказ в автоматическом режиме невозможно, т.к. у клиента уже на руках подписанный кредитный договор, который необходимо аннулировать через клиентскую поддержку Marketplace.<br>
+Для этого необходимо:
+<ul><li>Обратиться в поддержку Marketplace по почте <a href="mailto:mpsupport@homecredit.ru">mpsupport@homecredit.ru</a>, указав в письме номер кредитного договора (можно узнать в партнерском ЛК), и причину аннулирования договора</li><li>Отправлять корректный ответ на метод GET /order/:orderId: с "status": "cancelled" и указанием причины в поле "reason"</li><li>Если отмена заказа происходит по инициативе партнера, то необходимо связаться с клиентом и уведомить его об отмене.</li></ul>
+</aside>
+<h3 id='1300eba048-4'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Товар зарезервирован.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;reserved&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;delivering&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+<tr>
+<td><code>trackId</code><br> string</td>
+<td>Необязательно</td>
+<td>Id для трэкинга заказа, доставляемого транспортной компанией</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Заказ доставлен.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;delivered&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Заказ отклонен.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;cancelled&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+<tr>
+<td><code>reason</code> <br> string</td>
+<td>Обязательно</td>
+<td>причина отказа (Пример: &#39;not in stock&#39;)</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-4'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Код HTTP</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5xx</td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+<h1 id='api-1-0'>API версии 1.0 (устаревшее)</h1>
+<aside class="warning">
+Описание этих методов приводится ТОЛЬКО ДЛЯ ОЗНАКОМЛЕНИЯ. Текущая реализация все еще поддерживает их, но вскоре будет отключена. Настоятельно рекомендуется использование методов версий 2.0 и выше.
+</aside>
+<h2 id='post-order-check-2'>POST /order/check/</h2>
+<p><strong>Проверка наличия товара у партнера.</strong><br>
+В момент когда Покупатель выбрал предложение, партнеру поступает запрос на проверку наличия данного товара в регионе. В ответ партнер должен уведомить о возможности зарезервировать товар, а также прислать условия доставки и самовывоза. Расчет параметров получения товара клиентом должен производиться на основе доступных товаров. (Например, если доступно только 3 из 5 переданных в запросе товаров, стоимость доставки должна быть только для этих трех товаров).</p>
+<h3 id='c35d6d472e-4'>Входные параметры</h3>
+<p><code>POST https://example.com/order/check/</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/check/:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/check/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"offersRequest":[
+{"offerId":"123",
+"quantity":1,
+"regionId":77,
+"productCode":"0-0-6"}
+]}'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offersRequest</code><br>  Array of <a href="#offerrequest">{offerRequest}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов с запросами на проверку наличия товаров, которые выбрал Покупатель.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offerRequest</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code> <br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога</td>
+</tr>
+<tr>
+<td><code>quantity</code><br>integer</td>
+<td>Обязательно</td>
+<td>Количество единиц товара для бронирования</td>
+</tr>
+<tr>
+<td><code>regionId</code> <br>integer</td>
+<td>Обязательно</td>
+<td>Идентификатор региона</td>
+</tr>
+<tr>
+<td><code>productCode</code><br> string</td>
+<td>Обязательно</td>
+<td>Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='1300eba048-5'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Список товаров с указанием наличия и условий.</code></p>
+
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"offersResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"0"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"DeliveryOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"DeliveryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"DeliveryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доставка СДЭК(склад-склад)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offersResponse Array of <a href="#offerresponse">{offerResponse}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов со статусом резерва по каждому из запрошенных товаров.</td>
+</tr>
+<tr>
+<td>DeliveryOptions <a href="#deliveryoption">{DeliveryOption}</a></td>
+<td>Обязательно</td>
+<td>Дополнительная информация по параметрам доставки, которую сможет выбирать Покупатель. Партнер должен представить варианты доставки для всей группы товаров.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offerResponse</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code><br>integer</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>status</code><br>string</td>
+<td>Обязательно</td>
+<td>Варианты:<ul><li>‘available’ — товар доступен;</li><li>‘unavailable’ — товар недоступен.</li></ul></td>
+</tr>
+<tr>
+<td><code>quantity</code><br>integer</td>
+<td>Обязательно</td>
+<td>Доступное количество товара.</td>
+</tr>
+<tr>
+<td><code>points</code><br> Array of string</td>
+<td>Обязательно</td>
+<td>Идентификаторы пунктов самовывоза, в которых доступен товар.<br>Также необходимо добавлять в список 0, если доступна доставка курьером. Пустой массив - товар недоступен.</td>
+</tr>
+<tr>
+<td><code>reason</code><br>string</td>
+<td>Необязательно</td>
+<td>Указывается, если товар недоступен (пример: “not in stock”).</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект DeliveryOption</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>delivery</code><br> Array of Objects</td>
+<td>Необязательно</td>
+<td>Список вариантов доставки с указанием параметров: <ul><li>deliveryId—идентификатор службы доставки в системе партнера (будет передано при резервировании заказа);</li> <li>deliveryName— название службы доставки (будет отображено Покупателю);</li> <li>cost— стоимость доставки (если параметр отсутствует, то стоимость необходимо уточнять у службы доставки);</li><li> days— время доставки в днях (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
+</tr>
+<tr>
+<td><code>pickup</code><br> Array of Objects</td>
+<td>Необязательно</td>
+<td>Список точек самовывоза доступные для заказа с указанием параметров:<ul><li> point — идентификатор точки самовывоза из CSV;</li> <li>cost— стоимость за услугу самовывоза, можно указать 0 или не указывать данные параметр если самовывоз бесплатный;</li> <li>days — время доставки товара на точку самовывоза, после которой товар можно забрать, 0 - если можно забрать в тот же день (возможно указать интервал, например “5-7” интерпретируется как “доставка от 5 до 7 дней”).</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-5'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price is required"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"offerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not found"</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Код HTTP</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5xx</td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса). В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается.  Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+</tbody></table>
+<h2 id='post-order-orderid-reserve-2'>POST /order/:orderId/reserve</h2>
+<p><strong>Резервирование товара у партнера</strong><br>
+После того, как Покупатель заполнил заявку, выбрал способ доставки и его заявка была одобрена системой скоринга банка, партнеру приходит запрос на резервирование товара до момента подписания кредитного договора клиентом.</p>
+<h3 id='c35d6d472e-5'>Входные параметры</h3>
+<p><code>POST https://example.com/order/:orderId/reserve</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/:orderId/reserve:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/order/18022500002104/reserve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+  "orderId": "18022500002104", 
+  "offerIds": [
+    {
+      "offerId": 777, 
+      "quantity": 1, 
+      "price": 4000.0,
+      "priceTotal": 5000.0
+    }
+    ], 
+  "regionId": 77, 
+  "pointId": "0",
+  "DeliveryId": 7,
+  "productCode": "0-0-3",
+  "client": { "firstName": "Иван", "lastName": "Иванов", "phone": "1244567", "email":"test@test.ru" },
+  "address": {"country": "Россия", "region": "Москва", "district": "", "town": "Москва", "locality": "", "street": "Обводного канала", "house": "199", "flat": "", "block": "", "building": "", "zipcode": "190020"}
+}'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br>  string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса.</td>
+</tr>
+<tr>
+<td><code>offerIds</code><br> Array of <a href="#offer-3">{offer}</a></td>
+<td>Обязательно</td>
+<td>Массив объектов с идентификаторами товаров и их количество.</td>
+</tr>
+<tr>
+<td><code>regionId</code><br> integer</td>
+<td>Обязательно</td>
+<td>Идентификатор региона из списка.</td>
+</tr>
+<tr>
+<td><code>pointId</code><br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор точки самовывоза из CSV, 0 - если выбрана доставка курьером.</td>
+</tr>
+<tr>
+<td><code>DeliveryId</code><br>integer</td>
+<td>Необязательно</td>
+<td>Идентификатор службы доставки в системе партнера.</td>
+</tr>
+<tr>
+<td><code>productCode</code><br>string</td>
+<td>Обязательно</td>
+<td>Код кредитного продукта.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
+</tr>
+<tr>
+<td><code>address</code><br> <a href="#address">{address}</a></td>
+<td>Необязательно</td>
+<td>Адрес в формате КЛАДР, указывается, если выбрана доставка курьером.</td>
+</tr>
+<tr>
+<td><code>client</code><br> <a href="#clientinfoubu">{clientInfo}</a></td>
+<td>Обязательно(для метода reserve)</td>
+<td>Информация о клиенте.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект offer</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offerId</code><br> integer</td>
+<td>Обязательно</td>
+<td>Идентификатор товара из YML-каталога.</td>
+</tr>
+<tr>
+<td><code>quantity</code><br> integer</td>
+<td>Обязательно</td>
+<td>Количество единиц товара.</td>
+</tr>
+<tr>
+<td><code>price</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара с учетом скидки, предоставляемой партнером. Размер скидки зависит от используемого тарифа (срока рассрочки) и согласован с партнером.</td>
+</tr>
+<tr>
+<td><code>priceTotal</code><br> float</td>
+<td>Обязательно</td>
+<td>Цена товара без учета скидки, то есть стоимость товара, которую партнер заявил в своем каталоге.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект address</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>country</code><br>  string</td>
+<td>Обязательно</td>
+<td>Код страны по КЛАДР.</td>
+</tr>
+<tr>
+<td><code>region</code><br> string</td>
+<td>Обязательно</td>
+<td>Регион.</td>
+</tr>
+<tr>
+<td><code>district</code><br>string</td>
+<td>Обязательно</td>
+<td>Район.</td>
+</tr>
+<tr>
+<td><code>town</code><br>string</td>
+<td>Обязательно</td>
+<td>Город.</td>
+</tr>
+<tr>
+<td><code>locality</code><br>string</td>
+<td>Обязательно</td>
+<td>Населенный пункт.</td>
+</tr>
+<tr>
+<td><code>street</code> <br>string</td>
+<td>Обязательно</td>
+<td>Улица.</td>
+</tr>
+<tr>
+<td><code>house</code><br> string</td>
+<td>Обязательно</td>
+<td>Дом.</td>
+</tr>
+<tr>
+<td><code>flat</code> <br>string</td>
+<td>Необязательно</td>
+<td>Квартира.</td>
+</tr>
+<tr>
+<td><code>block</code> <br>string</td>
+<td>Необязательно</td>
+<td>Корпус.</td>
+</tr>
+<tr>
+<td><code>building</code> <br>string</td>
+<td>Необязательно</td>
+<td>Строение.</td>
+</tr>
+<tr>
+<td><code>zipcode</code> <br>string</td>
+<td>Обязательно</td>
+<td>Индекс.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Объект clientInfo</strong></p>
+
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>firstName</code><br>string</td>
+<td>Обязательно</td>
+<td>Имя клиента.</td>
+</tr>
+<tr>
+<td><code>lastName</code><br>string</td>
+<td>Обязательно</td>
+<td>Фамилия клиента.</td>
+</tr>
+<tr>
+<td><code>middleName</code><br>string</td>
+<td>Необязательно</td>
+<td>Отчество клиента.</td>
+</tr>
+<tr>
+<td><code>email</code><br>string</td>
+<td>Необязательно</td>
+<td>E-mail.</td>
+</tr>
+<tr>
+<td><code>phone</code><br>string</td>
+<td>Обязательно</td>
+<td>Телефон клиента. Номер должен быть ровно 10 цифр.</td>
+</tr>
+</tbody></table>
+<h3 id='1300eba048-6'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Товар зарезервирован(ответ на метод reserve).</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейса.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>значение: &quot;reserved&quot;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Товар недоступен для резервирования.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code> <br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейса.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>значение: &#39;cancelled&#39;.</td>
+</tr>
+<tr>
+<td><code>reason</code> <br>string</td>
+<td>Обязательно</td>
+<td>Причина отказа в резервировании (Пример: &#39;address is not in delivery area&#39;).</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-6'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="nl">"clientInfo"</span><span class="p">:</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone is required"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>5xx</code></td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса).<br> В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается. Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+<h2 id='post-order-orderid-status-2'>POST /order/:orderId/status</h2>
+<p><strong>Передача статуса кредитной заявки партнера</strong></p>
+
+<p>Данным методом Маркетплейс передает партнеру статус заявки в случае подписания(signed), что для партнера служит сигналом для доставки заказа клиенту или на пункт самовывоза. Либо отменяет заказ.</p>
+
+<aside class="notice">
+Возможные сценарии:
+</aside>
+
+<table><thead>
+<tr>
+<th>Статус</th>
+<th>Описание</th>
+<th>Действия партнера</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Кредит отменен<br>(CANCELLED)</td>
+<td>Отказ клиента. Также можно интерпретировать как отмена бронирования.</td>
+<td>Партнер отменяет заказ.</td>
+</tr>
+<tr>
+<td>Кредит подписан<br>(SIGNED)</td>
+<td>Покупатель подписал кредитный договор и ожидает получение товара.</td>
+<td>Партнер может выдать товар на пункте самовывоза, либо начинает процесс доставки.</td>
+</tr>
+</tbody></table>
+<h3 id='c35d6d472e-6'>Входные параметры</h3>
+<p><code>POST https://example.com/order/:orderId/status</code></p>
+
+<blockquote>
+<p>Пример запроса POST /order/:orderId/status:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+  https://example.com/order/1234567890/status/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "orderId":"1234567890",
+    "PartnerOrderId":"777",
+    "status":"SIGNED"
+  }'</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br>string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования.</td>
+</tr>
+<tr>
+<td><code>status</code><br>string</td>
+<td>Обязательно</td>
+<td>Статус кредитной заявки (передается в качестве url-параметра).<br> Возможные варианты:<br><ul><li> CANCELLED - Кредит отменен.Отказ клиента.</li> <li>SIGNED - Кредит подписан.</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='1300eba048-7'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK —  Товар принят в обработку.</code></p>
+
+<blockquote>
+<p>Примеры ответов в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне маркетплейса</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code> <br>string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;reserved&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-7'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid status"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>5xx</code></td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td>Неверный формат запроса (указаны неверные или не указаны обязательные параметры запроса).<br> В теле запроса необходимо передавать поля, которые переданы с ошибкой и указывать в чем она заключается. Формулировка ошибки может быть произвольной строкой (см. пример).</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+<h2 id='get-order-orderid-2'>GET /order/:orderId</h2>
+<blockquote>
+<p>Пример запроса GET /order/:orderId:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+  https://example.com/order/1234567890 <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+
+</code></pre></div>
+<p><code>GET https://example.com/order/:orderId</code></p>
+<h3 id='8c3e561fee-2'>Логика ответа</h3>
+<p>Возможные сценарии:</p>
+
+<table><thead>
+<tr>
+<th>Статус</th>
+<th>Описания</th>
+<th>Действия MarketPlace</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Товар зарезервирован (reserved)</td>
+<td>Партнер подтвердил, что выбранный товар зарезервирован до момента подписания Покупателем Кредитного договора</td>
+<td>MarketPlace отправляет договор на подписание (в случае курьерской доставки), либо готовит печатные формы договора (в случае подписания на торговой точке партнера).</td>
+</tr>
+<tr>
+<td>Товар находится в процессе доставки (delivering)</td>
+<td>Партнер сообщает, что товар находится в процессе доставки Покупателю.</td>
+<td>MarketPlace ожидает получение финального статуса.</td>
+</tr>
+<tr>
+<td>Товар доставлен (delivered)</td>
+<td>Партнер сообщает, что товар доставлен/выдан Покупателю.</td>
+<td>MarketPlace начинает процедуру взаиморасчета с партнером.</td>
+</tr>
+<tr>
+<td>Заказ отклонен (cancelled)</td>
+<td>Партнер сообщает, что заказ отклонен. Дополнительно указывает причину отказа в поле reason.</td>
+<td>MarketPlace отклоняет заказ внутри своей базы данных, информирует Покупателя об отмене.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+После того как партнеру пришел статус SIGNED, отменить заказ в автоматическом режиме невозможно, т.к. у клиента уже на руках подписанный кредитный договор, который необходимо аннулировать через клиентскую поддержку Marketplace.<br>
+Для этого необходимо:
+<ul><li>Обратиться в поддержку Marketplace по почте <a href="mailto:mpsupport@homecredit.ru">mpsupport@homecredit.ru</a>, указав в письме номер кредитного договора (можно узнать в партнерском ЛК), и причину аннулирования договора</li><li>Отправлять корректный ответ на метод GET /order/:orderId: с "status": "cancelled" и указанием причины в поле "reason"</li></ul>
+</aside>
+<h3 id='1300eba048-8'>Параметры ответа</h3>
+<p><code>HTTP status code 200 OK — Товар зарезервирован.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reserved"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;reserved&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Товар доставляется.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivering"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trackId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TK456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;delivering&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+<tr>
+<td><code>trackId</code><br> string</td>
+<td>Необязательно</td>
+<td>Id для трэкинга заказа, доставляемого транспортной компанией</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Заказ доставлен.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;delivered&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+</tbody></table>
+
+<p><code>HTTP status code 200 OK — Заказ отклонен.</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18022600000999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not in stock"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PartnerOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательность</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orderId</code><br> string</td>
+<td>Обязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне Маркетплейс.</td>
+</tr>
+<tr>
+<td><code>status</code><br> string</td>
+<td>Обязательно</td>
+<td>Значение: &#39;cancelled&#39;</td>
+</tr>
+<tr>
+<td><code>PartnerOrderId</code><br> string</td>
+<td>Необязательно</td>
+<td>Идентификатор заказа, сгенерированный на стороне партнера. Обязательный параметр, если партнер вернул этот параметр (номера заказа) на этапе резервирования</td>
+</tr>
+<tr>
+<td><code>reason</code> <br> string</td>
+<td>Обязательно</td>
+<td>причина отказа (Пример: &#39;not in stock&#39;)</td>
+</tr>
+</tbody></table>
+<h3 id='4e101f41fd-8'>Обработка ошибок</h3>
+<blockquote>
+<p>Пример ответа в JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"errorFields"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not valid Id"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Код HTTP</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5xx</td>
+<td>Внутренняя ошибка сервера партнера.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Заказ не существует или указан неверный идентификатор.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+В случае возникновения ошибки 5хх произойдет повторный запрос через 60 секунд, если ошибка повторится, партнеру перестанут поступать новые заказы. После пяти попыток с интервалом в минуту партнеру будет направлено email-уведомление о неполадках на его стороне, после чего партнер будет отключен от системы до тех пор, пока не сообщит о том, что работоспособность восстановлена.
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
