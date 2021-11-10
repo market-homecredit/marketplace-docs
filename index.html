@@ -485,6 +485,7 @@
                 <span class="nt">&lt;categoryId&gt;</span>2<span class="nt">&lt;/categoryId&gt;</span>
                 <span class="nt">&lt;typePrefix&gt;</span>Планшет<span class="nt">&lt;/typePrefix&gt;</span>
                 <span class="nt">&lt;vendor&gt;</span>Apple<span class="nt">&lt;/vendor&gt;</span>
+                <span class="nt">&lt;vendorCode&gt;</span>MTFR2RU/A<span class="nt">&lt;/vendorCode&gt;</span>
                 <span class="nt">&lt;model&gt;</span>iPad Pro 12.9 (2018) Wi-Fi 1Tb Space Gray (MTFR2RU/A)<span class="nt">&lt;/model&gt;</span>
                 <span class="nt">&lt;description&gt;</span>
                   Это iPad Pro с абсолютно новым дизайном и самыми продвинутыми технологиями Apple. 
@@ -609,22 +610,6 @@
 <td>Включает список элементов тарифов <a href="#credit">credit</a>, описывает доступные тарифы для каждого из товаров. Учитывается на основном сайте, и не учитывается для HomeShop.</td>
 </tr>
 <tr>
-<td><code>pickup</code><br> Необязательный</td>
-<td>Обозначает доступность в пунктах самовывоза. Возможные значения:<ul><li>true — товар доступен в пунктах самовывоза. Дополнительно необходимо указать список пунктов самовывоза в параметре  points;</li><li>false — товар недоступен в пунктах самовывоза.</li></ul></td>
-</tr>
-<tr>
-<td><code>delivery</code> <br> Необязательный</td>
-<td>Обозначает возможность доставки. Возможные значения:<ul><li>true — товар доступен для доставки;</li><li>false — доставка товара не предусмотрена.</li></ul></td>
-</tr>
-<tr>
-<td><code>points</code><br>  Обязательный, если был заявлен элемент pickup со значением true</td>
-<td>Состоит из элементов пунктов самовывоза и описывает доступные пункты самовывоза для получения данного предложения.</td>
-</tr>
-<tr>
-<td><code>delivery-options</code> <br> Необязательный</td>
-<td>Параметр содержит список сроков и стоимости доставки для данного товара. Родительский элемент для <a href="#option">option</a>.</td>
-</tr>
-<tr>
 <td><code>categoryId</code> <br> Необязательный</td>
 <td>Идентификатор категории товара для данного предложения</td>
 </tr>
@@ -641,12 +626,32 @@
 <td>Имя производителя или бренда для товара.</td>
 </tr>
 <tr>
+<td><code>vendorCode</code> <br>  Обязательный</td>
+<td>Артикул производителя.</td>
+</tr>
+<tr>
 <td><code>model</code> <br>  Необязательный</td>
 <td>Наименование модели товара.</td>
 </tr>
 <tr>
 <td><code>description</code> <br>  Необязательный</td>
 <td>Произвольное описание товара. Не более 3000 символов.</td>
+</tr>
+<tr>
+<td><code>pickup</code><br> Необязательный</td>
+<td>Обозначает доступность в пунктах самовывоза. Возможные значения:<ul><li>true — товар доступен в пунктах самовывоза. Дополнительно необходимо указать список пунктов самовывоза в параметре  points;</li><li>false — товар недоступен в пунктах самовывоза.</li></ul></td>
+</tr>
+<tr>
+<td><code>delivery</code> <br> Необязательный</td>
+<td>Обозначает возможность доставки. Возможные значения:<ul><li>true — товар доступен для доставки;</li><li>false — доставка товара не предусмотрена.</li></ul></td>
+</tr>
+<tr>
+<td><code>points</code><br>  Обязательный, если был заявлен элемент pickup со значением true</td>
+<td>Состоит из элементов пунктов самовывоза и описывает доступные пункты самовывоза для получения данного предложения.</td>
+</tr>
+<tr>
+<td><code>delivery-options</code> <br> Необязательный</td>
+<td>Параметр содержит список сроков и стоимости доставки для данного товара. Родительский элемент для <a href="#option">option</a>.</td>
 </tr>
 </tbody></table>
 
@@ -1146,7 +1151,7 @@
 <tr>
 <td><code>productCode</code><br> string</td>
 <td>Необязательно</td>
-<td>Код тарифа.<br> Примеры:<ul><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
+<td>Код тарифа.<br> Примеры:<ul><li>0-0-0</li><li>0-0-1</li><li>0-0-2</li><li>0-0-3</li><li>0-0-6</li><li>0-0-10</li><li>0-0-12</li><li>0-0-18</li><li>0-0-24</li><li>0-0-36</li></ul></td>
 </tr>
 </tbody></table>
 <h4 id='address'>Объект address</h4>
